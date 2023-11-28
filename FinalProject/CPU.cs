@@ -85,7 +85,7 @@ namespace FinalProject
         private string GetMarketLink(string code)
         {
             // TODO: Find a method to have the filtered chipset search for each GPU displayed automatically
-            string link = $"https://pcpartpicker.com/products/cpu/#sort=price&F={code}";
+            string link = $"https://pcpartpicker.com/product/{code}";
             return link;
         }
 
@@ -96,7 +96,7 @@ namespace FinalProject
             string cpuModel = this.Model.ToLower().Replace(" ", "-");
 
             // Construct the initial TechPowerUp link without the 4-digit code
-            string link = $"https://www.techpowerup.com/cpu-specs/{cpuModel}.c{code}";
+            string link = $"https://www.techpowerup.com/cpu-specs/{cpuModel}.{code}";
 
             return link;
         }

@@ -44,5 +44,41 @@ namespace FinalProject
         GPU Arc_A580 = new GPU("Intel", "Arc A750", 180, 74, 56, 32);
         GPU Arc_A380 = new GPU("Intel", "Arc A380", 120, 38, 28, 15);
 
+
+        /*
+         * Create the CPU Database
+         * Structure: Brand, Model, Cores, Threads, Price, 1080p Perf, DB Code, Mkt Code
+         * TODO: Update objects to contain the URL codes
+         */
+
+        /* Intel
+        CPU Intel_14900K = new CPU("Intel", "Core i9 14900K", 24, 32, 590, 260, );
+        CPU Intel_14700K = new CPU("Intel", "Core i7 14700K", 20, 28, 410, 252, );
+        CPU Intel_14600K = new CPU("Intel", "Core i5 14600K", 14, 20, 330, 237, );
+        CPU Intel_13900K = new CPU("Intel", "Core i9 13900K", 24, 32, 590, 256, );
+        CPU Intel_13700K = new CPU("Intel", "Core i7 13700K", 24, 32, 420, 247, );
+        CPU Intel_13600K = new CPU("Intel", "Core i5 13600K", 14, 20, 590, 232, );
+        CPU Intel_13500 = new CPU("Intel", "Core i5 13500", 14, 20, 225, 202,);
+        CPU Intel_13400F = new CPU("Intel", "Core i5 13400F", 10, 16, 210, 189,);
+        CPU Intel_13100 = new CPU("Intel", "Core i3 13100", 4, 8, 590, 134, );
+        CPU Intel_12400F = new CPU("Intel", "Core i5 12400F", 6, 12, 150, 182, );
+        CPU Intel_12100 = new CPU("Intel", "Core i3 12100", 4, 8, 95, 131, );
+
+        // AMD
+        CPU Ryzen_7950X3D = new CPU("AMD", "Ryzen 9 7950X3D", 16, 32, 685, 253, );
+        CPU Ryzen_7950X = new CPU("AMD", "Ryzen 9 7950X", 16, 32, 590, 231, );
+        CPU Ryzen_7900X = new CPU("AMD", "Ryzen 9 7900X", 12, 24, 450, 231, );
+        CPU Ryzen_7800X3D = new CPU("AMD", "Ryzen 7 7800X3D", 8, 16, 400, 266, "c3022", "g94BD3");
+        CPU Ryzen_7700X = new CPU("AMD", "Ryzen 7 7700X", 8, 16, 350, 235, );
+        CPU Ryzen_7600X = new CPU("AMD", "Ryzen 5 7600X", 6, 12, 250, 230, );
+        CPU Ryzen_7500F = new CPU("AMD", "Ryzen 5 7500F", 6, 12, 250, 180, );
+        CPU Ryzen_5950X = new CPU("AMD", "Ryzen 9 5950X", 16, 32, 250, 193, );
+        CPU Ryzen_5900X = new CPU("AMD", "Ryzen 9 5900X", 12, 24, 250, 193,);
+        CPU Ryzen_5800X3D = new CPU("AMD", "Ryzen 7 5800X3D", 8, 16, 250, 213,);
+        CPU Ryzen_5700X = new CPU("AMD", "Ryzen 7 5700X", 8, 16, 180, 187,);
+        CPU Ryzen_5600 = new CPU("AMD", "Ryzen 5 5600", 6, 12, 140, 182,);
+        CPU Ryzen_5700G = new CPU("AMD", "Ryzen 7 5700G", 8, 16, 150, 156,);
+        CPU Ryzen_3600 = new CPU("AMD", "Ryzen 5 3600", 6, 12, 115, 142,);
+        */
     }
 }
