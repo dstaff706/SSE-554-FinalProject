@@ -41,7 +41,7 @@ namespace FinalProject
         // Intel GPUs
         GPU Arc_A770 = new GPU("Intel", "Arc A770", 290, 96, 71, 42);
         GPU Arc_A750 = new GPU("Intel", "Arc A750", 190, 82, 63, 36);
-        GPU Arc_A580 = new GPU("Intel", "Arc A750", 180, 74, 56, 32);
+        GPU Arc_A580 = new GPU("Intel", "Arc A580", 180, 74, 56, 32);
         GPU Arc_A380 = new GPU("Intel", "Arc A380", 120, 38, 28, 15);
 
 
