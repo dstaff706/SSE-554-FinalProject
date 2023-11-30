@@ -87,16 +87,14 @@ namespace FinalProject
 
             switch (trackBarValue)
             {
+                
                 case 0:
-                    LblResolutionSelection.Text = "720p";
-                    break;
-                case 1:
                     LblResolutionSelection.Text = "1080p";
                     break;
-                case 2:
+                case 1:
                     LblResolutionSelection.Text = "1440p";
                     break;
-                case 3:
+                case 2:
                     LblResolutionSelection.Text = "2160p";
                     break;
                 default:
@@ -111,10 +109,9 @@ namespace FinalProject
 
             return trackBarValue switch
             {
-                0 => 720,
-                1 => 1080,
-                2 => 1440,
-                3 => 2160,
+                0 => 1080,
+                1 => 1440,
+                2 => 2160,
                 _ => 1080,
             };
         }

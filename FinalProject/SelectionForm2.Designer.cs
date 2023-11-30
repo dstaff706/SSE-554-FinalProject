@@ -43,7 +43,6 @@
             lblResolution = new Label();
             ResolutionTrackBar = new TrackBar();
             LblResolutionSelection = new Label();
-            Lbl720 = new Label();
             Lbl1080 = new Label();
             Lbl1440 = new Label();
             Lbl2160 = new Label();
@@ -185,7 +184,7 @@
             // ResolutionTrackBar
             // 
             ResolutionTrackBar.Location = new Point(32, 212);
-            ResolutionTrackBar.Maximum = 3;
+            ResolutionTrackBar.Maximum = 2;
             ResolutionTrackBar.Name = "ResolutionTrackBar";
             ResolutionTrackBar.Size = new Size(723, 69);
             ResolutionTrackBar.TabIndex = 13;
@@ -199,19 +198,10 @@
             LblResolutionSelection.Size = new Size(0, 25);
             LblResolutionSelection.TabIndex = 14;
             // 
-            // Lbl720
-            // 
-            Lbl720.AutoSize = true;
-            Lbl720.Location = new Point(25, 256);
-            Lbl720.Name = "Lbl720";
-            Lbl720.Size = new Size(53, 25);
-            Lbl720.TabIndex = 15;
-            Lbl720.Text = "720p";
-            // 
             // Lbl1080
             // 
             Lbl1080.AutoSize = true;
-            Lbl1080.Location = new Point(253, 256);
+            Lbl1080.Location = new Point(16, 256);
             Lbl1080.Name = "Lbl1080";
             Lbl1080.Size = new Size(63, 25);
             Lbl1080.TabIndex = 16;
@@ -220,7 +210,7 @@
             // Lbl1440
             // 
             Lbl1440.AutoSize = true;
-            Lbl1440.Location = new Point(483, 256);
+            Lbl1440.Location = new Point(360, 256);
             Lbl1440.Name = "Lbl1440";
             Lbl1440.Size = new Size(63, 25);
             Lbl1440.TabIndex = 17;
@@ -358,7 +348,6 @@
             Controls.Add(Lbl2160);
             Controls.Add(Lbl1440);
             Controls.Add(Lbl1080);
-            Controls.Add(Lbl720);
             Controls.Add(LblResolutionSelection);
             Controls.Add(ResolutionTrackBar);
             Controls.Add(lblResolution);
@@ -403,7 +392,6 @@
         private Label lblResolution;
         private TrackBar ResolutionTrackBar;
         private Label LblResolutionSelection;
-        private Label Lbl720;
         private Label Lbl1080;
         private Label Lbl1440;
         private Label Lbl2160;
