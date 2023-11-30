@@ -89,7 +89,7 @@
             Lbl5000.Name = "Lbl5000";
             Lbl5000.Size = new Size(62, 25);
             Lbl5000.TabIndex = 2;
-            Lbl5000.Text = "$5000";
+            Lbl5000.Text = "$3000";
             Lbl5000.UseMnemonic = false;
             // 
             // Lbl1000
@@ -97,18 +97,18 @@
             Lbl1000.AutoSize = true;
             Lbl1000.Location = new Point(16, 118);
             Lbl1000.Name = "Lbl1000";
-            Lbl1000.Size = new Size(62, 25);
+            Lbl1000.Size = new Size(52, 25);
             Lbl1000.TabIndex = 3;
-            Lbl1000.Text = "$1000";
+            Lbl1000.Text = "$400";
             // 
             // Lbl1500
             // 
             Lbl1500.AutoSize = true;
             Lbl1500.Location = new Point(95, 118);
             Lbl1500.Name = "Lbl1500";
-            Lbl1500.Size = new Size(62, 25);
+            Lbl1500.Size = new Size(52, 25);
             Lbl1500.TabIndex = 4;
-            Lbl1500.Text = "$1500";
+            Lbl1500.Text = "$725";
             // 
             // Lbl2000
             // 
@@ -117,7 +117,7 @@
             Lbl2000.Name = "Lbl2000";
             Lbl2000.Size = new Size(62, 25);
             Lbl2000.TabIndex = 5;
-            Lbl2000.Text = "$2000";
+            Lbl2000.Text = "$1050";
             // 
             // Lbl2500
             // 
@@ -127,7 +127,7 @@
             Lbl2500.RightToLeft = RightToLeft.No;
             Lbl2500.Size = new Size(62, 25);
             Lbl2500.TabIndex = 6;
-            Lbl2500.Text = "$2500";
+            Lbl2500.Text = "$1375";
             // 
             // Lbl3000
             // 
@@ -136,7 +136,7 @@
             Lbl3000.Name = "Lbl3000";
             Lbl3000.Size = new Size(62, 25);
             Lbl3000.TabIndex = 7;
-            Lbl3000.Text = "$3000";
+            Lbl3000.Text = "$1700";
             // 
             // Lbl3500
             // 
@@ -145,7 +145,7 @@
             Lbl3500.Name = "Lbl3500";
             Lbl3500.Size = new Size(62, 25);
             Lbl3500.TabIndex = 8;
-            Lbl3500.Text = "$3500";
+            Lbl3500.Text = "$2025";
             // 
             // Lbl4000
             // 
@@ -154,7 +154,7 @@
             Lbl4000.Name = "Lbl4000";
             Lbl4000.Size = new Size(62, 25);
             Lbl4000.TabIndex = 9;
-            Lbl4000.Text = "$4000";
+            Lbl4000.Text = "$2350";
             // 
             // Lbl4500
             // 
@@ -163,7 +163,7 @@
             Lbl4500.Name = "Lbl4500";
             Lbl4500.Size = new Size(62, 25);
             Lbl4500.TabIndex = 10;
-            Lbl4500.Text = "$4500";
+            Lbl4500.Text = "$2675";
             // 
             // LblBudgetSelection
             // 
