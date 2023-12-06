@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class Database
+    public class Database
     {
         /*  
          *  Set up the list of GPUs objects to be used for recommendation system
@@ -41,15 +41,16 @@ namespace FinalProject
         // Intel GPUs
         GPU Arc_A770 = new GPU("Intel", "Arc A770", 290, 96, 71, 42);
         GPU Arc_A750 = new GPU("Intel", "Arc A750", 190, 82, 63, 36);
-        GPU Arc_A580 = new GPU("Intel", "Arc A750", 180, 74, 56, 32);
+        GPU Arc_A580 = new GPU("Intel", "Arc A580", 180, 74, 56, 32);
         GPU Arc_A380 = new GPU("Intel", "Arc A380", 120, 38, 28, 15);
-
+                          
 
         /*
          * Create the CPU Database
          * Structure: Brand, Model, Cores, Threads, Price, 1080p Perf, DB Code, Mkt Code
          * TODO: Update objects to contain the URL codes
          */
+
 
         // Intel
         CPU Intel_14900K = new CPU("Intel", "Core i9 14900K", 24, 32, 576.99, 260, "c3269", "ZLjRsY");

@@ -43,7 +43,6 @@
             lblResolution = new Label();
             ResolutionTrackBar = new TrackBar();
             LblResolutionSelection = new Label();
-            Lbl720 = new Label();
             Lbl1080 = new Label();
             Lbl1440 = new Label();
             Lbl2160 = new Label();
@@ -89,7 +88,7 @@
             Lbl5000.Name = "Lbl5000";
             Lbl5000.Size = new Size(62, 25);
             Lbl5000.TabIndex = 2;
-            Lbl5000.Text = "$5000";
+            Lbl5000.Text = "$3000";
             Lbl5000.UseMnemonic = false;
             // 
             // Lbl1000
@@ -97,18 +96,18 @@
             Lbl1000.AutoSize = true;
             Lbl1000.Location = new Point(16, 118);
             Lbl1000.Name = "Lbl1000";
-            Lbl1000.Size = new Size(62, 25);
+            Lbl1000.Size = new Size(52, 25);
             Lbl1000.TabIndex = 3;
-            Lbl1000.Text = "$1000";
+            Lbl1000.Text = "$400";
             // 
             // Lbl1500
             // 
             Lbl1500.AutoSize = true;
             Lbl1500.Location = new Point(95, 118);
             Lbl1500.Name = "Lbl1500";
-            Lbl1500.Size = new Size(62, 25);
+            Lbl1500.Size = new Size(52, 25);
             Lbl1500.TabIndex = 4;
-            Lbl1500.Text = "$1500";
+            Lbl1500.Text = "$725";
             // 
             // Lbl2000
             // 
@@ -117,7 +116,7 @@
             Lbl2000.Name = "Lbl2000";
             Lbl2000.Size = new Size(62, 25);
             Lbl2000.TabIndex = 5;
-            Lbl2000.Text = "$2000";
+            Lbl2000.Text = "$1050";
             // 
             // Lbl2500
             // 
@@ -127,7 +126,7 @@
             Lbl2500.RightToLeft = RightToLeft.No;
             Lbl2500.Size = new Size(62, 25);
             Lbl2500.TabIndex = 6;
-            Lbl2500.Text = "$2500";
+            Lbl2500.Text = "$1375";
             // 
             // Lbl3000
             // 
@@ -136,7 +135,7 @@
             Lbl3000.Name = "Lbl3000";
             Lbl3000.Size = new Size(62, 25);
             Lbl3000.TabIndex = 7;
-            Lbl3000.Text = "$3000";
+            Lbl3000.Text = "$1700";
             // 
             // Lbl3500
             // 
@@ -145,7 +144,7 @@
             Lbl3500.Name = "Lbl3500";
             Lbl3500.Size = new Size(62, 25);
             Lbl3500.TabIndex = 8;
-            Lbl3500.Text = "$3500";
+            Lbl3500.Text = "$2025";
             // 
             // Lbl4000
             // 
@@ -154,7 +153,7 @@
             Lbl4000.Name = "Lbl4000";
             Lbl4000.Size = new Size(62, 25);
             Lbl4000.TabIndex = 9;
-            Lbl4000.Text = "$4000";
+            Lbl4000.Text = "$2350";
             // 
             // Lbl4500
             // 
@@ -163,7 +162,7 @@
             Lbl4500.Name = "Lbl4500";
             Lbl4500.Size = new Size(62, 25);
             Lbl4500.TabIndex = 10;
-            Lbl4500.Text = "$4500";
+            Lbl4500.Text = "$2675";
             // 
             // LblBudgetSelection
             // 
@@ -185,7 +184,7 @@
             // ResolutionTrackBar
             // 
             ResolutionTrackBar.Location = new Point(32, 212);
-            ResolutionTrackBar.Maximum = 3;
+            ResolutionTrackBar.Maximum = 2;
             ResolutionTrackBar.Name = "ResolutionTrackBar";
             ResolutionTrackBar.Size = new Size(723, 69);
             ResolutionTrackBar.TabIndex = 13;
@@ -199,19 +198,10 @@
             LblResolutionSelection.Size = new Size(0, 25);
             LblResolutionSelection.TabIndex = 14;
             // 
-            // Lbl720
-            // 
-            Lbl720.AutoSize = true;
-            Lbl720.Location = new Point(25, 256);
-            Lbl720.Name = "Lbl720";
-            Lbl720.Size = new Size(53, 25);
-            Lbl720.TabIndex = 15;
-            Lbl720.Text = "720p";
-            // 
             // Lbl1080
             // 
             Lbl1080.AutoSize = true;
-            Lbl1080.Location = new Point(253, 256);
+            Lbl1080.Location = new Point(16, 256);
             Lbl1080.Name = "Lbl1080";
             Lbl1080.Size = new Size(63, 25);
             Lbl1080.TabIndex = 16;
@@ -220,7 +210,7 @@
             // Lbl1440
             // 
             Lbl1440.AutoSize = true;
-            Lbl1440.Location = new Point(483, 256);
+            Lbl1440.Location = new Point(360, 256);
             Lbl1440.Name = "Lbl1440";
             Lbl1440.Size = new Size(63, 25);
             Lbl1440.TabIndex = 17;
@@ -358,7 +348,6 @@
             Controls.Add(Lbl2160);
             Controls.Add(Lbl1440);
             Controls.Add(Lbl1080);
-            Controls.Add(Lbl720);
             Controls.Add(LblResolutionSelection);
             Controls.Add(ResolutionTrackBar);
             Controls.Add(lblResolution);
@@ -403,7 +392,6 @@
         private Label lblResolution;
         private TrackBar ResolutionTrackBar;
         private Label LblResolutionSelection;
-        private Label Lbl720;
         private Label Lbl1080;
         private Label Lbl1440;
         private Label Lbl2160;

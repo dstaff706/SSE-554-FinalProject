@@ -31,31 +31,31 @@ namespace FinalProject
             switch (trackBarValue)
             {
                 case 0:
-                    LblBudgetSelection.Text = "$1000";
+                    LblBudgetSelection.Text = "$400";
                     break;
                 case 1:
-                    LblBudgetSelection.Text = "$1500";
+                    LblBudgetSelection.Text = "$725";
                     break;
                 case 2:
-                    LblBudgetSelection.Text = "$2000";
+                    LblBudgetSelection.Text = "$1050";
                     break;
                 case 3:
-                    LblBudgetSelection.Text = "$2500";
+                    LblBudgetSelection.Text = "$1375";
                     break;
                 case 4:
-                    LblBudgetSelection.Text = "$3000";
+                    LblBudgetSelection.Text = "$1700";
                     break;
                 case 5:
-                    LblBudgetSelection.Text = "$3500";
+                    LblBudgetSelection.Text = "$2025";
                     break;
                 case 6:
-                    LblBudgetSelection.Text = "$4000";
+                    LblBudgetSelection.Text = "$2350";
                     break;
                 case 7:
-                    LblBudgetSelection.Text = "$4500";
+                    LblBudgetSelection.Text = "$2675";
                     break;
                 case 8:
-                    LblBudgetSelection.Text = "$5000";
+                    LblBudgetSelection.Text = "$3000";
                     break;
                 default:
                     break;
@@ -68,16 +68,16 @@ namespace FinalProject
 
             return trackBarValue switch
             {
-                0 => 1000,
-                1 => 1500,
-                2 => 2000,
-                3 => 2500,
-                4 => 3000,
-                5 => 3500,
-                6 => 4000,
-                7 => 4500,
-                8 => 5000,
-                _ => 1000
+                0 => 400,
+                1 => 725,
+                2 => 1050,
+                3 => 1375,
+                4 => 1700,
+                5 => 2025,
+                6 => 2350,
+                7 => 2675,
+                8 => 3000,
+                _ => 1375
             };
         }
 
@@ -87,16 +87,14 @@ namespace FinalProject
 
             switch (trackBarValue)
             {
+                
                 case 0:
-                    LblResolutionSelection.Text = "720p";
-                    break;
-                case 1:
                     LblResolutionSelection.Text = "1080p";
                     break;
-                case 2:
+                case 1:
                     LblResolutionSelection.Text = "1440p";
                     break;
-                case 3:
+                case 2:
                     LblResolutionSelection.Text = "2160p";
                     break;
                 default:
@@ -111,10 +109,9 @@ namespace FinalProject
 
             return trackBarValue switch
             {
-                0 => 720,
-                1 => 1080,
-                2 => 1440,
-                3 => 2160,
+                0 => 1080,
+                1 => 1440,
+                2 => 2160,
                 _ => 1080,
             };
         }
