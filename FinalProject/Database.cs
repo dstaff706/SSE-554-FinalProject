@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,32 +17,32 @@ namespace FinalProject
         // NVIDIA GPUs
         GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133, "c3889", "539");
         GPU RTX_4080 = new GPU("NVIDIA", "Geforce RTX 4080", 1199.99, 214, 171, 103, "c3888", "542");
-        GPU RTX_4070_Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 729.99, 187, 141, 82, "c3950", "549");
+        GPU RTX_4070Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 729.99, 187, 141, 82, "c3950", "549");
         GPU RTX_4070 = new GPU("NVIDIA", "Geforce RTX 4070", 539.99, 153, 115, 67, "c3924", "550");
-        GPU RTX_4060_Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 369.99, 120, 88, 49, "c3890", "553");
+        GPU RTX_4060Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 369.99, 120, 88, 49, "c3890", "553");
         GPU RTX_4060 = new GPU("NVIDIA", "Geforce RTX 4060", 299.99, 96, 70, 39, "c4107", "552");
 
         GPU RTX_3090 = new GPU("NVIDIA", "Geforce RTX 3090", 1356.12, 167, 129, 80, "c3622", "493");
-        GPU RTX_3070_Ti = new GPU("NVIDIA", "Geforce RTX 3070 Ti", 499.99, 128, 97, 58, "c3675", "506");
+        GPU RTX_3070Ti = new GPU("NVIDIA", "Geforce RTX 3070 Ti", 499.99, 128, 97, 58, "c3675", "506");
         GPU RTX_3070 = new GPU("NVIDIA", "Geforce RTX 3070", 399.99, 121, 90, 54, "c3674", "494,508");
-        GPU RTX_3060_Ti = new GPU("NVIDIA", "Geforce RTX 3060 Ti", 329.99, 106, 80, 47, "c3681", "497,513");
+        GPU RTX_3060Ti = new GPU("NVIDIA", "Geforce RTX 3060 Ti", 329.99, 106, 80, 47, "c3681", "497,513");
         GPU RTX_3060 = new GPU("NVIDIA", "Geforce RTX 3060", 289.99, 81, 60, 35, "c3682", "499");
         GPU RTX_3050 = new GPU("NVIDIA", "Geforce RTX 3050", 219.99, 59, 43, 25, "c3858", "518");
         GPU RTX_2060 = new GPU("NVIDIA", "Geforce RTX 2060", 189.99, 66, 48, 26, "c3310", "436");
 
         // AMD GPUs
-        GPU RX_7900_XTX = new GPU("AMD", "Radeon RX 7900 XTX", 919.99, 213, 174, 108, "c3941", "548");
-        GPU RX_7900_XT = new GPU("AMD", "Radeon RX 7900 XT", 739.99, 193, 152, 90, "c3912", "547");
-        GPU RX_7800_XT = new GPU("AMD", "Radeon RX 7800 XT", 499.99, 157, 119, 70, "c3839", "559");
-        GPU RX_7700_XT = new GPU("AMD", "Radeon RX 7700 XT", 429.99, 138, 103, 58, "c3911", "558");
+        GPU RX_7900XTX = new GPU("AMD", "Radeon RX 7900 XTX", 919.99, 213, 174, 108, "c3941", "548");
+        GPU RX_7900XT = new GPU("AMD", "Radeon RX 7900 XT", 739.99, 193, 152, 90, "c3912", "547");
+        GPU RX_7800XT = new GPU("AMD", "Radeon RX 7800 XT", 499.99, 157, 119, 70, "c3839", "559");
+        GPU RX_7700XT = new GPU("AMD", "Radeon RX 7700 XT", 429.99, 138, 103, 58, "c3911", "558");
         GPU RX_7600 = new GPU("AMD", "Radeon RX 7600", 249.99, 94, 68, 35, "c4153", "554");
 
-        GPU RX_6900_XT = new GPU("AMD", "Radeon RX 6900 XT", 699.99, 162, 124, 73, "c3481", "498");
-        GPU RX_6800_XT = new GPU("AMD", "Radeon RX 6800 XT", 449.99, 153, 117, 68, "c3694", "496");
+        GPU RX_6900XT = new GPU("AMD", "Radeon RX 6900 XT", 699.99, 162, 124, 73, "c3481", "498");
+        GPU RX_6800XT = new GPU("AMD", "Radeon RX 6800 XT", 449.99, 153, 117, 68, "c3694", "496");
         GPU RX_6800 = new GPU("AMD", "Radeon RX 6800", 389.99, 132, 101, 59, "c3713", "495");
-        GPU RX_6700_XT = new GPU("AMD", "Radeon RX 6700 XT", 299.99, 110, 82, 46, "c3695", "501");
+        GPU RX_6700XT = new GPU("AMD", "Radeon RX 6700 XT", 299.99, 110, 82, 46, "c3695", "501");
         GPU RX_6600 = new GPU("AMD", "Radeon RX 6600", 189.99, 77, 54, 27, "c3696", "511");
-        GPU RX_6500_XT = new GPU("AMD", "Radeon RX 6500 XT", 139.99, 35, 23, 11, "c3850", "517");
+        GPU RX_6500XT = new GPU("AMD", "Radeon RX 6500 XT", 139.99, 35, 23, 11, "c3850", "517");
 
         // Intel GPUs
         GPU Arc_A770 = new GPU("Intel", "Arc A770", 199.99, 92, 71, 42, "c3914", "540");
@@ -49,6 +50,17 @@ namespace FinalProject
         GPU Arc_A580 = new GPU("Intel", "Arc A580", 159.99, 74, 56, 32, "c3928", "561");
         GPU Arc_A380 = new GPU("Intel", "Arc A380", 99.99, 38, 28, 15, "c3913", "538");
 
+       
+        /*
+        public static List<GPU> GPUs = new List<GPU>
+        {
+            RTX_4090, RTX_4080, RTX_4070Ti, RTX_4070, RTX_4060Ti, RTX_4060,
+            RTX_3090, RTX_3070Ti, RTX_3070, RTX_3060Ti, RTX_3060, RTX_3050, RTX_2060,
+            RX_7900XTX, RX_7900XT, RX_7800XT, RX_7700XT, RX_7600,
+            RX_6900XT, RX_6800XT, RX_6800,RX_6700XT, RX_6600, RX_6500XT,
+            Arc_A770, Arc_A750, Arc_A580, Arc_A380
+        };
+        */
 
         /*
          * Create the CPU Database

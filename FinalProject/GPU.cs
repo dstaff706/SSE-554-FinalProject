@@ -9,34 +9,12 @@ using FinalProject;
 
 namespace FinalProject
 {
-    internal class GPU
-    {
-        private string brand;
-        private string model;
-        private double price;
+    internal class GPU : ComputerPart
+    { 
         private int perf1080p;
         private int perf1440p;
         private int perf2160p;
-        private string databaseLink;
-        private string marketLink;
-        private string databaseCode;
-        private string marketCode;
 
-        public string Brand
-        {
-            get { return brand; }
-            set { brand = value; }
-        }
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
-        public double Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
         public int Perf1080p
         {
             get { return perf1080p; }
@@ -51,26 +29,6 @@ namespace FinalProject
         {
             get { return perf2160p; }
             set { perf2160p = value; }
-        }
-
-        public string DatabaseLink
-        {
-            get { return databaseLink; }
-        }
-        public string MarketLink
-        {
-            get { return marketLink; }
-        }
-
-        public string DatabaseCode
-        { get { return databaseCode; } 
-          set {  databaseCode = value; }
-        }
-
-        public string MarketCode
-        {
-            get { return marketCode; }
-            set { marketCode = value; }
         }
 
         public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p, string dbCode, string mktCode)
@@ -88,27 +46,21 @@ namespace FinalProject
         }
 
         // Manually generates the GPU's Marktetplace URL hosted on PCPartPicker.com
-        private void SetMarketLink(string mktCode)
+        public override void SetMarketLink(string mktCode)
         {
             string link = $"https://pcpartpicker.com/products/video-card/#sort=price&c={mktCode}";
-            marketLink = link;
+            MarketLink = link;
         }
 
         // Manually generates the GPU's Database URL hosted on TechPowerUp.com
-        private void SetDatabaseLink(string dbCode)
+        public override void SetDatabaseLink(string dbCode)
         {
             // Replace the spaces in the GPU model with '-' and force it to be lowercase 
             string gpuModel = this.Model.ToLower().Replace(" ", "-");
 
             // Generate TechPowerUp link with the provided 4-digit code
             string link = $"https://www.techpowerup.com/gpu-specs/{gpuModel}.c{dbCode}";
-            databaseLink = link;
-        }
-
-        public void DisplayGPU()
-        {
-            WriteLine("{0} {1} (${2})", Brand, Model,
-                Price.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+            DatabaseLink = link;
         }
 
         public void ShowHDPerf()
@@ -126,12 +78,12 @@ namespace FinalProject
             WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
         }
 
-        public void ShowDatabaseLink()
+        public override void ShowDatabaseLink()
         {
             WriteLine("GPU Database Link: {0}", DatabaseLink);
         }
 
-        public void ShowMarketLink()
+        public override void ShowMarketLink()
         {
             WriteLine("Marketplace Link: {0}", MarketLink);
         }
@@ -141,80 +93,7 @@ namespace FinalProject
     /*
     public void RecommendGPU(double userBudget, int userResolution, int userFramerate, List<GPU> gpuList)
     {
-        foreach (var gpu in gpuList)
-        {
-            int gpuScore = 0;
-            int gpuPerf = 0;
-
-            // Determine Performance metrics to use based on the user's preferred resolution
-            switch (userResolution)
-            {
-                case 1080:
-                    gpuPerf = gpu.Perf1080p;
-                    break;
-                case 1440:
-                    gpuPerf = gpu.Perf1440p;
-                    break;
-                case 2160:
-                    gpuPerf = gpu.Perf2160p;
-                    break;
-                default:
-                    gpuPerf = gpu.Perf1080p;
-                    break;
-
-            }
-
-            // Calculate and establish a score for each GPU based on the performance metrics
-            if (gpuPerf >= 2 * userFramerate)
-            {
-                gpuScore += 10;
-            }
-            else if (gpuPerf >= 1.8 * userFramerate)
-            {
-                gpuScore += 8;
-            }
-            else if (gpuPerf >= 1.6 * userFramerate)
-            {
-                gpuScore += 6;
-            }
-            else if (gpuPerf >= 1.4 * userFramerate)
-            {
-                gpuScore += 4;
-            }
-            else if (gpuPerf >= 1.2 * userFramerate)
-            {
-                gpuScore += 2;
-            }
-            else if (gpuPerf >= userFramerate)
-            {
-                gpuScore += 1;
-            }
-
-            if (userBudget >= gpu.Price)
-            {
-                gpuScore += 1;
-            }
-            else if (userBudget >= 0.8 * gpu.Price)
-            {
-                gpuScore += 2;
-            }
-            else if (userBudget >= 0.6 * gpu.Price)
-            {
-                gpuScore += 3;
-            }
-            else if (userBudget >= 0.4 * gpu.Price)
-            {
-                gpuScore += 4;
-            }
-            else if (userBudget >= 0.2 * gpu.Price)
-            {
-                gpuScore += 5;
-            }
-            else if (userBudget <= gpu.Price)
-            {
-                gpuScore = 0;
-            }
-        }
+       
     }
 
     static void PrintGPURecommendations(List<GPU> gpuList, string gpuTier)
