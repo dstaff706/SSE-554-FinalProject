@@ -23,19 +23,40 @@ namespace FinalProject
         private readonly UserSelection ResultsSelection;
         public ResultsForm(UserSelection selection)
         {
+            Database gpuDatabase = new Database();
+
+            List<GPU> allGPUs = gpuDatabase.ReturnGPUs();
+
             InitializeComponent();
+
             ResultsSelection = selection;
-            PopulateRichTextBox();
+
+            GPU[] topGPUs = allGPUs
+                .OrderByDescending(gpu => gpu.Perf1440p)
+                .Take(5)
+                .ToArray();
+
+            PopulateRichTextBox(topGPUs);
+
             DisplayImage1();
 
         }
 
-        private void PopulateRichTextBox()
+        private void PopulateRichTextBox(GPU[] topGPUs)
         {
-            rtbResult.Text = $"Budget: {ResultsSelection.Budget}\n" +
-                             $"Resolution: {ResultsSelection.Resolution}\n" +
-                             $"FPS: {ResultsSelection.FPS}\n" +
-                             $"Brand: {ResultsSelection.Brand}";
+            for (int i = 0; i < topGPUs.Length; i++)
+            {
+                GPU gpu = topGPUs[i];
+
+                RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+
+                if (richTextBox != null)
+                {
+                    richTextBox.AppendText($"Brand: {gpu.Brand}\n");
+                    richTextBox.AppendText($"Model: {gpu.Model}\n");
+                    richTextBox.AppendText($"Price: {gpu.Price}");
+                }
+            }
 
         }
 

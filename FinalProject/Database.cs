@@ -13,6 +13,65 @@ namespace FinalProject
          *  Set up the list of GPUs objects to be used for recommendation system
          *  Object Constructor Design: new GPU(Brand, Model, Price, Perf1080p, Perf1440p, Perf2160p, DatabaseCode, MarketCode) 
          */
+        private List<GPU> gpuList = new List<GPU>();
+
+        public Database() 
+        {
+            //Creating gpuList that can search through in the other forms
+            gpuList = new List<GPU>
+            {
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4090", Price = 1600, Perf1080p = 243, Perf1440p = 209, Perf2160p = 133 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4080", Price = 1199.99, Perf1080p = 214, Perf1440p = 171, Perf2160p = 103 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070 Ti", Price = 729.99, Perf1080p = 187, Perf1440p = 141, Perf2160p = 82 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070", Price = 539.99, Perf1080p = 153, Perf1440p = 115, Perf2160p = 67 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4060 Ti", Price = 369.99, Perf1080p = 120, Perf1440p = 88, Perf2160p = 49 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4060", Price = 299.99, Perf1080p = 96, Perf1440p = 70, Perf2160p = 39 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3090", Price = 1356.12, Perf1080p = 167, Perf1440p = 129, Perf2160p = 80 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3070 Ti", Price = 499.99, Perf1080p = 128, Perf1440p = 97, Perf2160p = 58 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3070", Price = 399.99, Perf1080p = 121, Perf1440p = 90, Perf2160p = 54 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3060 Ti", Price = 329.99, Perf1080p = 106, Perf1440p = 80, Perf2160p = 47 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3060", Price = 289.99, Perf1080p = 81, Perf1440p = 60, Perf2160p = 35 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3050", Price = 219.99, Perf1080p = 59, Perf1440p = 43, Perf2160p = 25 },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 2060", Price = 189.99, Perf1080p = 66, Perf1440p = 48, Perf2160p = 26 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 7900 XTX", Price = 919.99, Perf1080p = 213, Perf1440p = 174, Perf2160p = 108 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 7900 XT", Price = 739.99, Perf1080p = 193, Perf1440p = 152, Perf2160p = 90 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 7800 XT", Price = 499.99, Perf1080p = 157, Perf1440p = 119, Perf2160p = 70 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 7700 XT", Price = 429.99, Perf1080p = 132, Perf1440p = 101, Perf2160p = 59 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 7600", Price = 249.99, Perf1080p = 94, Perf1440p = 68, Perf2160p = 35 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6900 XT", Price = 699.99, Perf1080p = 162, Perf1440p = 124, Perf2160p = 73 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6800 XT", Price = 449.99, Perf1080p = 153, Perf1440p = 117, Perf2160p = 68 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6800", Price = 389.99, Perf1080p = 132, Perf1440p = 101, Perf2160p = 59 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6700 XT", Price = 299.99, Perf1080p = 110, Perf1440p = 82, Perf2160p = 46 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6600", Price = 189.99, Perf1080p = 77, Perf1440p = 54, Perf2160p = 27 },
+                new GPU{ Brand = "AMD", Model = "Radeon RX 6500 XT", Price = 139.99, Perf1080p = 35, Perf1440p = 23, Perf2160p = 11 },
+                new GPU{ Brand = "Intel", Model = "Arc A770", Price = 199.99, Perf1080p = 92, Perf1440p = 71, Perf2160p = 42 },
+                new GPU{ Brand = "Intel", Model = "Arc A750", Price = 169.99, Perf1080p = 82, Perf1440p = 63, Perf2160p = 36 },
+                new GPU{ Brand = "Intel", Model = "Arc A580", Price = 159.99, Perf1080p = 74, Perf1440p = 56, Perf2160p = 32 },
+                new GPU{ Brand = "Intel", Model = "Arc A380", Price = 99.99, Perf1080p = 38, Perf1440p = 28, Perf2160p = 15 }
+
+            };
+        }
+
+
+        public void AddGPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
+        {
+            GPU newGPU = new GPU
+            {
+                Brand = brand,
+                Model = model,
+                Price = price,
+                Perf1080p = perf1080p,
+                Perf1440p = perf1440p,
+                Perf2160p = perf2160p
+            };
+
+            gpuList.Add(newGPU);
+        }
+
+        public List<GPU> ReturnGPUs()
+        {
+            return gpuList;
+        }
 
         // NVIDIA GPUs
         GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133, "c3889", "539");
@@ -98,4 +157,5 @@ namespace FinalProject
         CPU Ryzen_5500 = new CPU("AMD", "Ryzen 5 5500", 6, 12, 99.99, 138, "c2756", "PgcG3C");
         CPU Ryzen_5700G = new CPU("AMD", "Ryzen 7 5700G", 8, 16, 175.70, 156, "c2472", "ycGbt6");
     }
+
 }
