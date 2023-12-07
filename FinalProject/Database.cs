@@ -10,45 +10,49 @@ namespace FinalProject
     {
         /*  
          *  Set up the list of GPUs objects to be used for recommendation system
-         *  Object Constructor Design: new GPU(Brand, Model, Price, Perf1080p, Perf1440p, Perf2160p) 
+         *  Object Constructor Design: new GPU(Brand, Model, Price, Perf1080p, Perf1440p, Perf2160p, DatabaseCode, MarketCode) 
          */
 
         // NVIDIA GPUs
-        GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133);
-        GPU RTX_4080 = new GPU("NVIDIA", "Geforce RTX 4080", 1200, 214, 171, 103);
-        GPU RTX_4070_Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 800, 187, 141, 82);
-        GPU RTX_4070 = new GPU("NVIDIA", "Geforce RTX 4070", 550, 153, 115, 67);
-        GPU RTX_4060_Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 450, 120, 88, 49);
-        GPU RTX_4060 = new GPU("NVIDIA", "Geforce RTX 4060", 300, 96, 70, 39);
+        GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133, "c3889", "539");
+        GPU RTX_4080 = new GPU("NVIDIA", "Geforce RTX 4080", 1199.99, 214, 171, 103, "c3888", "542");
+        GPU RTX_4070_Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 729.99, 187, 141, 82, "c3950", "549");
+        GPU RTX_4070 = new GPU("NVIDIA", "Geforce RTX 4070", 539.99, 153, 115, 67, "c3924", "550");
+        GPU RTX_4060_Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 369.99, 120, 88, 49, "c3890", "553");
+        GPU RTX_4060 = new GPU("NVIDIA", "Geforce RTX 4060", 299.99, 96, 70, 39, "c4107", "552");
 
-        GPU RTX_3090 = new GPU("NVIDIA", "Geforce RTX 3090", 1200, 167, 129, 80);
-        GPU RTX_3070 = new GPU("NVIDIA", "Geforce RTX 3070", 360, 121, 90, 54);
-        GPU RTX_3060_Ti = new GPU("NVIDIA", "Geforce RTX 3060 Ti", 330, 106, 80, 47);
-        GPU RTX_3060 = new GPU("NVIDIA", "Geforce RTX 3060", 300, 81, 60, 35);
-        GPU RTX_3050 = new GPU("NVIDIA", "Geforce RTX 3050", 230, 59, 43, 25);
+        GPU RTX_3090 = new GPU("NVIDIA", "Geforce RTX 3090", 1356.12, 167, 129, 80, "c3622", "493");
+        GPU RTX_3070_Ti = new GPU("NVIDIA", "Geforce RTX 3070 Ti", 499.99, 128, 97, 58, "c3675", "506");
+        GPU RTX_3070 = new GPU("NVIDIA", "Geforce RTX 3070", 399.99, 121, 90, 54, "c3674", "494,508");
+        GPU RTX_3060_Ti = new GPU("NVIDIA", "Geforce RTX 3060 Ti", 329.99, 106, 80, 47, "c3681", "497,513");
+        GPU RTX_3060 = new GPU("NVIDIA", "Geforce RTX 3060", 289.99, 81, 60, 35, "c3682", "499");
+        GPU RTX_3050 = new GPU("NVIDIA", "Geforce RTX 3050", 219.99, 59, 43, 25, "c3858", "518");
+        GPU RTX_2060 = new GPU("NVIDIA", "Geforce RTX 2060", 189.99, 66, 48, 26, "c3310", "436");
 
         // AMD GPUs
-        GPU RX_7900_XTX = new GPU("AMD", "Radeon RX 7900 XTX", 900, 213, 174, 108);
-        GPU RX_7900_XT = new GPU("AMD", "Radeon RX 7900 XT", 700, 213, 152, 90);
-        GPU RX_7800_XT = new GPU("AMD", "Radeon RX 7800 XT", 500, 157, 119, 70);
-        GPU RX_7700_XT = new GPU("AMD", "Radeon RX 7700 XT", 450, 138, 103, 58);
-        GPU RX_7600 = new GPU("AMD", "Radeon RX 7600", 250, 94, 68, 35);
+        GPU RX_7900_XTX = new GPU("AMD", "Radeon RX 7900 XTX", 919.99, 213, 174, 108, "c3941", "548");
+        GPU RX_7900_XT = new GPU("AMD", "Radeon RX 7900 XT", 739.99, 193, 152, 90, "c3912", "547");
+        GPU RX_7800_XT = new GPU("AMD", "Radeon RX 7800 XT", 499.99, 157, 119, 70, "c3839", "559");
+        GPU RX_7700_XT = new GPU("AMD", "Radeon RX 7700 XT", 429.99, 138, 103, 58, "c3911", "558");
+        GPU RX_7600 = new GPU("AMD", "Radeon RX 7600", 249.99, 94, 68, 35, "c4153", "554");
 
-        GPU RX_6700_XT = new GPU("AMD", "Radeon RX 6700 XT", 300, 110, 82, 46);
-        GPU RX_6600_XT = new GPU("AMD", "Radeon RX 6600 XT", 270, 96, 63, 32);
-        GPU RX_6500_XT = new GPU("AMD", "Radeon RX 6600 XT", 150, 35, 23, 11);
+        GPU RX_6900_XT = new GPU("AMD", "Radeon RX 6900 XT", 699.99, 162, 124, 73, "c3481", "498");
+        GPU RX_6800_XT = new GPU("AMD", "Radeon RX 6800 XT", 449.99, 153, 117, 68, "c3694", "496");
+        GPU RX_6800 = new GPU("AMD", "Radeon RX 6800", 389.99, 132, 101, 59, "c3713", "495");
+        GPU RX_6700_XT = new GPU("AMD", "Radeon RX 6700 XT", 299.99, 110, 82, 46, "c3695", "501");
+        GPU RX_6600 = new GPU("AMD", "Radeon RX 6600", 189.99, 77, 54, 27, "c3696", "511");
+        GPU RX_6500_XT = new GPU("AMD", "Radeon RX 6500 XT", 139.99, 35, 23, 11, "c3850", "517");
 
         // Intel GPUs
-        GPU Arc_A770 = new GPU("Intel", "Arc A770", 290, 96, 71, 42);
-        GPU Arc_A750 = new GPU("Intel", "Arc A750", 190, 82, 63, 36);
-        GPU Arc_A580 = new GPU("Intel", "Arc A580", 180, 74, 56, 32);
-        GPU Arc_A380 = new GPU("Intel", "Arc A380", 120, 38, 28, 15);
-                          
+        GPU Arc_A770 = new GPU("Intel", "Arc A770", 199.99, 92, 71, 42, "c3914", "540");
+        GPU Arc_A750 = new GPU("Intel", "Arc A750", 169.99, 82, 63, 36, "c3929", "541");
+        GPU Arc_A580 = new GPU("Intel", "Arc A580", 159.99, 74, 56, 32, "c3928", "561");
+        GPU Arc_A380 = new GPU("Intel", "Arc A380", 99.99, 38, 28, 15, "c3913", "538");
+
 
         /*
          * Create the CPU Database
          * Structure: Brand, Model, Cores, Threads, Price, 1080p Perf, DB Code, Mkt Code
-         * TODO: Update objects to contain the URL codes
          */
 
 
@@ -71,11 +75,9 @@ namespace FinalProject
         CPU Ryzen_7950X3D = new CPU("AMD", "Ryzen 9 7950X3D", 16, 32, 577.99, 253, "c3024", "X6XV3C");
         CPU Ryzen_7950X = new CPU("AMD", "Ryzen 9 7950X", 16, 32, 564.99, 231, "c2846", "22XJ7P");
         CPU Ryzen_7900X = new CPU("AMD", "Ryzen 9 7900X", 12, 24, 388.96, 231, "c2847", "bwxRsY");
-        // TODO: Add 7900X3D, 7900, 7700, 7600, 5600X3D
         CPU Ryzen_7800X3D = new CPU("AMD", "Ryzen 7 7800X3D", 8, 16, 358.99, 266, "c3022", "3hyH99");
         CPU Ryzen_7700X = new CPU("AMD", "Ryzen 7 7700X", 8, 16, 319.00, 235, "c2848", "WfqPxr");
         CPU Ryzen_7600X = new CPU("AMD", "Ryzen 5 7600X", 6, 12, 209.00, 230, "c2849", "66C48d");
-        //CPU Ryzen_7500F = new CPU("AMD", "Ryzen 5 7500F", 6, 12, 250, 180, "c3259", "zGn9TW");
         CPU Ryzen_5950X = new CPU("AMD", "Ryzen 9 5950X", 16, 32, 433.98, 193, "c2364", "Qk2bt6");
         CPU Ryzen_5900X = new CPU("AMD", "Ryzen 9 5900X", 12, 24, 288.99, 193, "c2363", "KwLwrH");
         CPU Ryzen_5800X3D = new CPU("AMD", "Ryzen 7 5800X3D", 8, 16, 322.49, 213, "c2532", "CZ3gXL");
@@ -83,6 +85,5 @@ namespace FinalProject
         CPU Ryzen_5600 = new CPU("AMD", "Ryzen 5 5600", 6, 12, 129.99, 182, "c2743", "PgcG3C");
         CPU Ryzen_5500 = new CPU("AMD", "Ryzen 5 5500", 6, 12, 99.99, 138, "c2756", "PgcG3C");
         CPU Ryzen_5700G = new CPU("AMD", "Ryzen 7 5700G", 8, 16, 175.70, 156, "c2472", "ycGbt6");
-        CPU Ryzen_3600 = new CPU("AMD", "Ryzen 5 3600", 6, 12, 169.95, 142, "c2132", "9nm323");
     }
 }

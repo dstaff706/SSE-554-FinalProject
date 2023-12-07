@@ -19,6 +19,8 @@ namespace FinalProject
         private int perf2160p;
         private string databaseLink;
         private string marketLink;
+        private string databaseCode;
+        private string marketCode;
 
         public string Brand
         {
@@ -54,15 +56,24 @@ namespace FinalProject
         public string DatabaseLink
         {
             get { return databaseLink; }
-            set { databaseLink = value; }
         }
         public string MarketLink
         {
             get { return marketLink; }
-            set { marketLink = value; }
         }
 
-        public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
+        public string DatabaseCode
+        { get { return databaseCode; } 
+          set {  databaseCode = value; }
+        }
+
+        public string MarketCode
+        {
+            get { return marketCode; }
+            set { marketCode = value; }
+        }
+
+        public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;
@@ -70,46 +81,28 @@ namespace FinalProject
             Perf1080p = perf1080p;
             Perf1440p = perf1440p;
             Perf2160p = perf2160p;
-            MarketLink = GetMarketLink();
-            DatabaseLink = GetDatabaseLink();
+            DatabaseCode = dbCode;
+            MarketCode = mktCode;
+            SetMarketLink(MarketCode);
+            SetDatabaseLink(DatabaseCode);
         }
 
-        public string GetMarketLink()
+        // Manually generates the GPU's Marktetplace URL hosted on PCPartPicker.com
+        private void SetMarketLink(string mktCode)
         {
-            // TODO: Find a method to have the filtered chipset search for each GPU displayed automatically
-            string link = "https://pcpartpicker.com/products/video-card/#sort=price";
-            return link;
+            string link = $"https://pcpartpicker.com/products/video-card/#sort=price&c={mktCode}";
+            marketLink = link;
         }
 
-        // Finds the GPU's hyperlink in the GPU Database hosted on TechPowerUp.com 
-        public string GetDatabaseLink()
+        // Manually generates the GPU's Database URL hosted on TechPowerUp.com
+        private void SetDatabaseLink(string dbCode)
         {
             // Replace the spaces in the GPU model with '-' and force it to be lowercase 
             string gpuModel = this.Model.ToLower().Replace(" ", "-");
 
-            // Construct the initial TechPowerUp link without the 4-digit code
-            string link = $"https://www.techpowerup.com/gpu-specs/{gpuModel}.c";
-
-            // Use HtmlAgilityPack to extract the 4-digit code from the webpage
-            HtmlWeb web = new HtmlWeb();
-            HtmlDocument doc = web.Load(link);
-
-            // Extract the 4-digit code from the webpage
-            HtmlNode codeNode = doc.DocumentNode.SelectSingleNode("//div[@class='headingblock']");
-            string code = codeNode?.InnerText.Trim();
-
-            // Check if the code is not null or empty
-            if (!string.IsNullOrEmpty(code))
-            {
-                // A valid link has been found --> Append the code to the initial link
-                return link + code;
-            }
-            else
-            {
-                // Return a default link or handle the error accordingly
-                return link + "1234"; // Replace with your default code or error handling logic
-            }
-            return link;
+            // Generate TechPowerUp link with the provided 4-digit code
+            string link = $"https://www.techpowerup.com/gpu-specs/{gpuModel}.c{dbCode}";
+            databaseLink = link;
         }
 
         public void DisplayGPU()
