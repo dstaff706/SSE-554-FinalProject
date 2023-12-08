@@ -77,19 +77,22 @@ namespace FinalProject
             DatabaseLink = link;
         }
 
-        public void ShowHDPerf()
+        public override void ShowPerf()
         {
             WriteLine("Avg. 1080p Performance: {0} FPS", Perf1080p);
-        }
-
-        public void ShowQHDPerf()
-        {
             WriteLine("Avg. 1440p Performance: {0} + FPS", Perf1440p);
+            WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
         }
 
-        public void Show4KPerf()
+        public override string GetStats()
         {
-            WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
+            string perfInfo = 
+                $"Avg. 1080p Performance {Perf1080p} FPS\n" +
+                $"Avg. 1440p Performance: {Perf1440p} FPS\n" +
+                $"Avg. 2160p Performnce: {Perf2160p} FPS\n" +
+                ShowDatabaseLink() + $"{DatabaseLink}\n" +
+                ShowMarketLink() + $"{MarketLink}";
+            return perfInfo;
         }
 
     } // GPU

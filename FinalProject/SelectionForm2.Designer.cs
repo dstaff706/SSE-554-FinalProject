@@ -306,10 +306,10 @@
             NvidiaRadioButton.AutoSize = true;
             NvidiaRadioButton.Location = new Point(328, 49);
             NvidiaRadioButton.Name = "NvidiaRadioButton";
-            NvidiaRadioButton.Size = new Size(87, 29);
+            NvidiaRadioButton.Size = new Size(96, 29);
             NvidiaRadioButton.TabIndex = 1;
             NvidiaRadioButton.TabStop = true;
-            NvidiaRadioButton.Text = "Nvidia";
+            NvidiaRadioButton.Text = "NVIDIA";
             NvidiaRadioButton.UseVisualStyleBackColor = true;
             // 
             // AMDRadioButton
