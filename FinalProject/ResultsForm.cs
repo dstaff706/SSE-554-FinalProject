@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.ComponentModel.Design;
 
 namespace FinalProject
 {
@@ -54,7 +55,12 @@ namespace FinalProject
                 {
                     richTextBox.AppendText($"Brand: {gpu.Brand}\n");
                     richTextBox.AppendText($"Model: {gpu.Model}\n");
-                    richTextBox.AppendText($"Price: {gpu.Price}");
+                    richTextBox.AppendText($"Price: ${gpu.Price}\n");
+                    richTextBox.AppendText($"1080p Performance: {gpu.Perf1080p} FPS\n");
+                    richTextBox.AppendText($"1440p Performance: {gpu.Perf1440p} FPS\n");
+                    richTextBox.AppendText($"2160p Performance: {gpu.Perf2160p} FPS\n");
+                    richTextBox.AppendText($"PC Part Picker Link: {gpu.MarketLink}\n");
+                    richTextBox.AppendText($"TPU Database Link: {gpu.DatabaseLink}");
                 }
             }
 
