@@ -9,7 +9,7 @@ using FinalProject;
 
 namespace FinalProject
 {
-    internal class GPU : ComputerPart
+    public class GPU : ComputerPart
     { 
         private int perf1080p;
         private int perf1440p;
@@ -41,8 +41,8 @@ namespace FinalProject
             Perf2160p = 0;
 			MarketCode = string.Empty;
 			DatabaseCode = string.Empty;
-            MarketLink = SetMarketLink(MarketCode);
-            DatabaseLink = SetDatabaseLink(DatabaseCode);
+            SetMarketLink(MarketCode);
+            SetDatabaseLink(DatabaseCode);
 
         }
         public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p, string dbCode, string mktCode)

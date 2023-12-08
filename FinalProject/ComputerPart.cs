@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace FinalProject
 {
-    internal abstract class ComputerPart
+    public abstract class ComputerPart
     {
         private string brand;
         private string model;
