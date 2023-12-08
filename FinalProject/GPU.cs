@@ -78,15 +78,6 @@ namespace FinalProject
             WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
         }
 
-        public override void ShowDatabaseLink()
-        {
-            WriteLine("GPU Database Link: {0}", DatabaseLink);
-        }
-
-        public override void ShowMarketLink()
-        {
-            WriteLine("Marketplace Link: {0}", MarketLink);
-        }
     } // GPU
 
 
@@ -96,12 +87,6 @@ namespace FinalProject
        
     }
 
-    static void PrintGPURecommendations(List<GPU> gpuList, string gpuTier)
-    {
-        foreach (var gpu in gpuList)
-        {
-        }
-    }
     */
 
 }

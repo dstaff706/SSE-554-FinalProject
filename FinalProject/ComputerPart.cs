@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using System.Windows.Forms;
+using System.Diagnostics;
 
 
 namespace FinalProject
@@ -61,8 +63,25 @@ namespace FinalProject
 
         public abstract void SetDatabaseLink(string dbCode);
         public abstract void SetMarketLink(string mktCode);
-        public abstract void ShowMarketLink();
-        public abstract void ShowDatabaseLink();
+        public void ShowMarketLink()
+        {
+            WriteLine("PC Part Picker Link");
+        }
+        public void ShowDatabaseLink()
+        {
+            WriteLine("TPU Database Link");
+        }
+
+        /*
+         * Opens either the TechPowerUp database link or PC Part Picker
+         * marketplace link in the default web browser.
+         * This command should only be triggered when either the 
+         * "TPU Database Link" or "PC Part Picker Link" text is clicked on.
+         */
+        public void OpenLink(string link)
+        {
+            Process.Start(new ProcessStartInfo(link) { UseShellExecute = true});
+        }
 
         public void DisplayPart()
         {

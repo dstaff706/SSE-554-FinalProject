@@ -64,16 +64,6 @@ namespace FinalProject
             WriteLine("Avg. 1080p Performance (w/ RTX 4090): {0} FPS", Perf1080p);
         }
 
-        public override void ShowDatabaseLink()
-        {
-            WriteLine("CPU Database Link: {0}", DatabaseLink);
-        }
-
-        public override void ShowMarketLink()
-        {
-            WriteLine("CPU Marketplace Link: {0}", MarketLink);
-        }
-
         public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
         {
             Brand = brand;
