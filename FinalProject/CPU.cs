@@ -12,7 +12,7 @@ using FinalProject;
 
 namespace FinalProject
 {
-    internal class CPU : ComputerPart
+    public class CPU : ComputerPart
     {
         private int cores;
         private int threads;
