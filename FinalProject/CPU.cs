@@ -104,5 +104,5 @@ namespace FinalProject
             return (this.Perf1080p.CompareTo(otherCPU.Perf1080p));
         }
 
-    } // CPU
+    } // CPU class
 }
