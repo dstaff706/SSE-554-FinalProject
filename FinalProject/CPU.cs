@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using static System.Console;
 using System.Collections.Generic;
 using System.Globalization;
@@ -17,7 +17,7 @@ namespace FinalProject
         private int cores;
         private int threads;
         private int perf1080p;
-
+        
         public int Cores
         {
             get { return cores; }
@@ -69,6 +69,21 @@ namespace FinalProject
                 ShowMarketLink() + $"{MarketLink}";
             return perfInfo;
         }
+
+        public CPU()
+        {
+            Brand = string.Empty;
+            Model = string.Empty;
+            Cores = 0;
+            Threads = 0;
+            Price = 0;
+            Perf1080p = 0;
+            DatabaseCode = string.Empty;
+            MarketCode = string.Empty;
+            SetMarketLink(MarketCode);
+            SetDatabaseLink(DatabaseCode);
+        }
+
         public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
         {
             Brand = brand;
