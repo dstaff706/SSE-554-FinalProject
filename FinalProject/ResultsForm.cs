@@ -25,17 +25,49 @@ namespace FinalProject
         public ResultsForm(UserSelection selection)
         {
             Database gpuDatabase = new Database();
+            //Database cpuDatabase = new Database();
 
             List<GPU> allGPUs = gpuDatabase.ReturnGPUs();
+            //List<CPU> allCPUs = cpuDatabase.ReturnCPUs();
 
             InitializeComponent();
 
             ResultsSelection = selection;
 
-            GPU[] topGPUs = allGPUs
-                .OrderByDescending(gpu => gpu.Perf1440p)
-                .Take(5)
-                .ToArray();
+            // Sort the Top 5 GPUs based on their performance
+            double budget = ResultsSelection.Budget;
+            int resolution = ResultsSelection.Resolution;
+            int fps = ResultsSelection.FPS;
+            string brand = ResultsSelection.Brand;
+
+            // Sort the GPU list by descending order (1080p by default)
+            GPU[] topGPUs = allGPUs.OrderByDescending(gpu => gpu.Perf1080p).ToArray();
+            //CPU[] topCPUs = allCPUs.ToArray();
+
+            // Adjust the List order based on their performance at the selected resolution
+            if (resolution == 1080)
+            {
+                topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf1080p)
+                   .Where (gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf1080p >= fps))
+                   .Take(5)
+                   .ToArray();
+            }
+
+            else if (resolution == 1440)
+            {
+                topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf1440p)
+                   .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf1440p >= fps))
+                   .Take(5)
+                   .ToArray();
+            }
+
+            else if (resolution == 2160)
+            {
+                topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf2160p)
+                    .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf2160p >= fps))
+                    .Take(5)
+                    .ToArray();
+            }
 
             PopulateRichTextBox(topGPUs);
 
@@ -53,14 +85,8 @@ namespace FinalProject
 
                 if (richTextBox != null)
                 {
-                    richTextBox.AppendText($"Brand: {gpu.Brand}\n");
-                    richTextBox.AppendText($"Model: {gpu.Model}\n");
-                    richTextBox.AppendText($"Price: ${gpu.Price}\n");
-                    richTextBox.AppendText($"1080p Performance: {gpu.Perf1080p} FPS\n");
-                    richTextBox.AppendText($"1440p Performance: {gpu.Perf1440p} FPS\n");
-                    richTextBox.AppendText($"2160p Performance: {gpu.Perf2160p} FPS\n");
-                    richTextBox.AppendText($"PC Part Picker Link: {gpu.MarketLink}\n");
-                    richTextBox.AppendText($"TPU Database Link: {gpu.DatabaseLink}");
+                    richTextBox.AppendText(gpu.GetPartInfo());
+                    richTextBox.AppendText(gpu.GetStats());
                 }
             }
 

@@ -63,13 +63,15 @@ namespace FinalProject
 
         public abstract void SetDatabaseLink(string dbCode);
         public abstract void SetMarketLink(string mktCode);
-        public void ShowMarketLink()
+        public abstract void ShowPerf();
+        public abstract string GetStats();
+        public string ShowMarketLink()
         {
-            WriteLine("PC Part Picker Link");
+            return "PC Part Picker Link: ";
         }
-        public void ShowDatabaseLink()
+        public string ShowDatabaseLink()
         {
-            WriteLine("TPU Database Link");
+            return "TPU Database Link: ";
         }
 
         /*
@@ -83,10 +85,11 @@ namespace FinalProject
             Process.Start(new ProcessStartInfo(link) { UseShellExecute = true});
         }
 
-        public void DisplayPart()
+        public string GetPartInfo()
         {
-            WriteLine("{0} {1} (${2})", Brand, Model,
-                Price.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+            string partInfo = $"{Brand} {Model}\n" +
+                $"Price: {Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))}\n";
+            return partInfo;
         }
     }
 }

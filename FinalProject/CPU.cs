@@ -12,7 +12,7 @@ using FinalProject;
 
 namespace FinalProject
 {
-    public class CPU : ComputerPart
+    public class CPU : ComputerPart, IComparable
     {
         private int cores;
         private int threads;
@@ -55,15 +55,20 @@ namespace FinalProject
             DatabaseLink = link;
         }
 
-        public void ShowCoreCount()
+        public override void ShowPerf()
         {
-            WriteLine("     Cores: {0}\n    Threads: {1}", Cores, Threads);
-        }
-        public void ShowHDPerf()
-        {
+            WriteLine("Cores: {0}\n    Threads: {1}", Cores, Threads);
             WriteLine("Avg. 1080p Performance (w/ RTX 4090): {0} FPS", Perf1080p);
         }
 
+        public override string GetStats()
+        {
+            string perfInfo = 
+                $"Avg. 1080p Performance {Perf1080p} FPS\n" +
+                ShowDatabaseLink() + $"{DatabaseLink}\n" +
+                ShowMarketLink() + $"{MarketLink}";
+            return perfInfo;
+        }
         public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
         {
             Brand = brand;
@@ -77,5 +82,12 @@ namespace FinalProject
             SetMarketLink(MarketCode);
             SetDatabaseLink(DatabaseCode);
         }
+
+        public int CompareTo(Object other)
+        {
+            CPU otherCPU = (CPU)other;
+            return (this.Perf1080p.CompareTo(otherCPU.Perf1080p));
+        }
+
     } // CPU
 }
