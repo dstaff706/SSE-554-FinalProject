@@ -17,7 +17,7 @@ namespace FinalProject
 
         private List<CPU> cpuList = new List<CPU>();
 
-        public Database() 
+        public Database()
         {
             //Creating gpuList that can search through in the other forms
             gpuList = new List<GPU>
@@ -84,13 +84,10 @@ namespace FinalProject
                 new CPU{Brand = "AMD" , Model = "Ryzen 7 5700G", Cores = 8, Threads = 16, Price = 175.70, Perf1080p = 156, DatabaseCode = "c2472", MarketCode = "ycGbt6"},
             };
 
-    }
+        } // Database constructor
 
-
-    //Method to add more GPUs to the list  
-    public void AddGPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
-    {
-        GPU newGPU = new GPU
+        //Method to add more GPUs to the list  
+        public void AddGPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
         {
             GPU newGPU = new GPU
             {
@@ -105,14 +102,15 @@ namespace FinalProject
             gpuList.Add(newGPU);
         }
 
-    //Method to return items in the gpu list
-    public List<GPU> ReturnGPUs()
-    {
-        return gpuList;
-    }
-//Adds CPU to the cpu list
-    public void AddCPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
-    {
+        //Method to return items in the gpu list
+        public List<GPU> ReturnGPUs()
+        {
+            return gpuList;
+        }
+
+        //Adds CPU to the cpu list
+        public void AddCPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
+        {
             CPU newCPU = new CPU
             {
                 Brand = brand,
@@ -126,21 +124,21 @@ namespace FinalProject
             };
             
             cpuList.Add(newCPU);
-    }
+        }
 
-//Returns the cpu list
-    public List<CPU> ReturnCPUs() 
-    { 
-        return cpuList; 
-    }
+        //Returns the cpu list
+        public List<CPU> ReturnCPUs() 
+        { 
+            return cpuList; 
+        }
 
-    // NVIDIA GPUs
-    GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133, "c3889", "539");
-    GPU RTX_4080 = new GPU("NVIDIA", "Geforce RTX 4080", 1199.99, 214, 171, 103, "c3888", "542");
-    GPU RTX_4070Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 729.99, 187, 141, 82, "c3950", "549");
-    GPU RTX_4070 = new GPU("NVIDIA", "Geforce RTX 4070", 539.99, 153, 115, 67, "c3924", "550");
-    GPU RTX_4060Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 369.99, 120, 88, 49, "c3890", "553");
-    GPU RTX_4060 = new GPU("NVIDIA", "Geforce RTX 4060", 299.99, 96, 70, 39, "c4107", "552");
+        // NVIDIA GPUs
+        GPU RTX_4090 = new GPU("NVIDIA", "Geforce RTX 4090", 1600, 243, 209, 133, "c3889", "539");
+        GPU RTX_4080 = new GPU("NVIDIA", "Geforce RTX 4080", 1199.99, 214, 171, 103, "c3888", "542");
+        GPU RTX_4070Ti = new GPU("NVIDIA", "Geforce RTX 4070 Ti", 729.99, 187, 141, 82, "c3950", "549");
+        GPU RTX_4070 = new GPU("NVIDIA", "Geforce RTX 4070", 539.99, 153, 115, 67, "c3924", "550");
+        GPU RTX_4060Ti = new GPU("NVIDIA", "Geforce RTX 4060 Ti", 369.99, 120, 88, 49, "c3890", "553");
+        GPU RTX_4060 = new GPU("NVIDIA", "Geforce RTX 4060", 299.99, 96, 70, 39, "c4107", "552");
 
         GPU RTX_3090 = new GPU("NVIDIA", "Geforce RTX 3090", 1356.12, 167, 129, 80, "c3622", "493");
         GPU RTX_3070Ti = new GPU("NVIDIA", "Geforce RTX 3070 Ti", 499.99, 128, 97, 58, "c3675", "506");
@@ -207,6 +205,7 @@ namespace FinalProject
         CPU Ryzen_5600 = new CPU("AMD", "Ryzen 5 5600", 6, 12, 129.99, 182, "c2743", "PgcG3C");
         CPU Ryzen_5500 = new CPU("AMD", "Ryzen 5 5500", 6, 12, 99.99, 138, "c2756", "PgcG3C");
         CPU Ryzen_5700G = new CPU("AMD", "Ryzen 7 5700G", 8, 16, 175.70, 156, "c2472", "ycGbt6");
-    }
+
+    } // Database class
 
 }
