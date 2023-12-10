@@ -30,7 +30,7 @@
         {
             rtbResult1 = new RichTextBox();
             rtbResult2 = new RichTextBox();
-            pbResult = new PictureBox();
+            pbResult1 = new PictureBox();
             pbResult2 = new PictureBox();
             pbCpu1 = new PictureBox();
             pbCpu2 = new PictureBox();
@@ -44,7 +44,7 @@
             pbCpu4 = new PictureBox();
             pbCpu5 = new PictureBox();
             btnClose = new Button();
-            ((System.ComponentModel.ISupportInitialize)pbResult).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbResult1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbResult2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu2).BeginInit();
@@ -74,14 +74,14 @@
             rtbResult2.TabIndex = 1;
             rtbResult2.Text = "";
             // 
-            // pbResult
+            // pbResult1
             // 
-            pbResult.Location = new Point(353, 33);
-            pbResult.Margin = new Padding(2);
-            pbResult.Name = "pbResult";
-            pbResult.Size = new Size(266, 115);
-            pbResult.TabIndex = 2;
-            pbResult.TabStop = false;
+            pbResult1.Location = new Point(353, 33);
+            pbResult1.Margin = new Padding(2);
+            pbResult1.Name = "pbResult1";
+            pbResult1.Size = new Size(266, 115);
+            pbResult1.TabIndex = 2;
+            pbResult1.TabStop = false;
             // 
             // pbResult2
             // 
@@ -213,13 +213,13 @@
             Controls.Add(pbCpu2);
             Controls.Add(pbCpu1);
             Controls.Add(pbResult2);
-            Controls.Add(pbResult);
+            Controls.Add(pbResult1);
             Controls.Add(rtbResult2);
             Controls.Add(rtbResult1);
             Margin = new Padding(2);
             Name = "ResultsForm";
             Text = "Recommendations";
-            ((System.ComponentModel.ISupportInitialize)pbResult).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbResult1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbResult2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu2).EndInit();
@@ -236,7 +236,7 @@
 
         private RichTextBox rtbResult1;
         private RichTextBox rtbResult2;
-        private PictureBox pbResult;
+        private PictureBox pbResult1;
         private PictureBox pbResult2;
         private PictureBox pbCpu1;
         private PictureBox pbCpu2;

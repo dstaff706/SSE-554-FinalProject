@@ -40,6 +40,13 @@ namespace FinalProject
             int fps = ResultsSelection.FPS;
             string brand = ResultsSelection.Brand;
 
+            //Setup path to image files
+            string imagesLocation = Path.GetDirectoryName(Application.ExecutablePath);
+
+            string imagesFolder = "Images";
+
+            string imagesPath = Path.Combine(imagesLocation, imagesFolder);
+
             // Sort the GPU list by descending order (1080p by default)
             GPU[] topGPUs = allGPUs.OrderByDescending(gpu => gpu.Perf1080p).ToArray();
             //CPU[] topCPUs = allCPUs.ToArray();
@@ -69,13 +76,11 @@ namespace FinalProject
                     .ToArray();
             }
 
-            PopulateRichTextBox(topGPUs);
-
-            DisplayImage1();
-
+            PopulateRichTextBox(topGPUs, imagesPath);
+                        
         }
 
-        private void PopulateRichTextBox(GPU[] topGPUs)
+        private void PopulateRichTextBox(GPU[] topGPUs, string imagePath)
         {
             for (int i = 0; i < topGPUs.Length; i++)
             {
@@ -87,39 +92,58 @@ namespace FinalProject
                 {
                     richTextBox.AppendText(gpu.GetPartInfo());
                     richTextBox.AppendText(gpu.GetStats());
+                    //setting file path for gpu
+                    string imageFilePath = SearchForImage(imagePath, topGPUs[i].Model.ToString());
+                    //display gpu image
+                    DisplayImage("GPU", imageFilePath, i);
                 }
             }
 
         }
 
-        private void DisplayImage1()
+        private void DisplayImage(string type, string imagePath, int i)
         {
-            string imagesLocation = Path.GetDirectoryName(Application.ExecutablePath);
+            string findString = String.Empty;
 
-            string imagesFolder = "Images";
-
-            string imagesPath = Path.Combine(imagesLocation, imagesFolder); 
-
-            if (Directory.Exists(imagesPath))
+            if (type == "GPU")
             {
-                string[] imageFiles = Directory.GetFiles(imagesPath);
+                findString = "pbResult";
+            }
+            else
+            {
+                findString = "pbCpu";
+            }
 
-                if(imageFiles.Length > 0)
+            PictureBox pictureBox = Controls.Find($"{findString}{i + 1}", true).FirstOrDefault() as PictureBox;
+
+            if (pictureBox != null)
+            {
+                if (File.Exists(imagePath))
                 {
-                    pbResult.SizeMode = PictureBoxSizeMode.Zoom;
-                    pbResult.Image = System.Drawing.Image.FromFile(imageFiles[0]);
+                    pictureBox.Image = System.Drawing.Image.FromFile(imagePath);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 else
                 {
                     MessageBox.Show("No image files found in the folder!");
                 }
             }
-            else
+
+        }
+
+        static string SearchForImage(string directoryPath, string fileName)
+        {
+            if (Directory.Exists(directoryPath))
             {
-                MessageBox.Show("Image folder not found!");
+                string[] files = Directory.GetFiles(directoryPath, $"{fileName}.jpg", SearchOption.AllDirectories);
+
+                if (files.Length > 0)
+                {
+                    return files[0];
+                }
             }
 
-           
+            return string.Empty;
         }
                
     }
