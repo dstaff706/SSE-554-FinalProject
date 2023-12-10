@@ -80,8 +80,6 @@ namespace FinalProject
             Perf1080p = 0;
             DatabaseCode = string.Empty;
             MarketCode = string.Empty;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
         }
 
         public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
@@ -94,8 +92,6 @@ namespace FinalProject
             Perf1080p = perf1080p;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
         }
 
         public int CompareTo(Object other)
