@@ -26,6 +26,12 @@
     <None Remove="Images\Geforce RTX 4080.jpg" />
     <None Remove="Images\Geforce RTX 4090.jpg" />
     <None Remove="Images\Intel.jpg" />
+    <None Remove="Images\Radeon RX 6500 XT.jpg" />
+    <None Remove="Images\Radeon RX 6600.jpg" />
+    <None Remove="Images\Radeon RX 6700 XT.jpg" />
+    <None Remove="Images\Radeon RX 6800 XT.jpg" />
+    <None Remove="Images\Radeon RX 6800.jpg" />
+    <None Remove="Images\Radeon RX 6900 XT.jpg" />
     <None Remove="Images\Radeon RX 7600.jpg" />
     <None Remove="Images\Radeon RX 7700 XT.jpg" />
     <None Remove="Images\Radeon RX 7800 XT.jpg" />
@@ -71,20 +77,38 @@
     <Content Include="Images\Geforce RTX 4090.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Radeon RX 6500 XT.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Radeon RX 6600.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Radeon RX 6700 XT.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Radeon RX 6800 XT.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Radeon RX 6800.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Radeon RX 6900 XT.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Radeon RX 7600.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Radeon RX 7700 XT.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Radeon RX 7800 XT.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Radeon RX 7900 XT.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Radeon RX 7900 XTX.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Arc A380.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
