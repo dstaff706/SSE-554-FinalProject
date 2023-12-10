@@ -71,7 +71,6 @@ namespace FinalProject
 
         public abstract void SetDatabaseLink(string dbCode);
         public abstract void SetMarketLink(string mktCode);
-        public abstract void ShowPerf();
         public abstract string GetStats();
         public string ShowMarketLink()
         {

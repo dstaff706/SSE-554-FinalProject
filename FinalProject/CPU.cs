@@ -55,15 +55,12 @@ namespace FinalProject
             DatabaseLink = link;
         }
 
-        public override void ShowPerf()
-        {
-            WriteLine("Cores: {0}\n    Threads: {1}", Cores, Threads);
-            WriteLine("Avg. 1080p Performance (w/ RTX 4090): {0} FPS", Perf1080p);
-        }
-
+        // Returns a string showing the core/thread count, benchmark data, and relevant URLs for the CPU
         public override string GetStats()
         {
             string perfInfo = 
+                $"Cores: {Cores}\n" + 
+                $"Threads: {Threads}\n" +
                 $"Avg. 1080p Performance {Perf1080p} FPS\n" +
                 ShowDatabaseLink() + $"{DatabaseLink}\n" +
                 ShowMarketLink() + $"{MarketLink}";

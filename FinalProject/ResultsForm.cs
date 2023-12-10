@@ -24,11 +24,10 @@ namespace FinalProject
         private readonly UserSelection ResultsSelection;
         public ResultsForm(UserSelection selection)
         {
-            Database gpuDatabase = new Database();
-            //Database cpuDatabase = new Database();
+            Database partDatabase = new Database();
 
-            List<GPU> allGPUs = gpuDatabase.ReturnGPUs();
-            //List<CPU> allCPUs = cpuDatabase.ReturnCPUs();
+            List<GPU> allGPUs = partDatabase.ReturnGPUs();
+            List<CPU> allCPUs = partDatabase.ReturnCPUs();
 
             InitializeComponent();
 
@@ -47,9 +46,9 @@ namespace FinalProject
 
             string imagesPath = Path.Combine(imagesLocation, imagesFolder);
 
-            // Sort the GPU list by descending order (1080p by default)
+            // Sort the GPU and CPU lists by descending order (1080p by default)
             GPU[] topGPUs = allGPUs.OrderByDescending(gpu => gpu.Perf1080p).ToArray();
-            //CPU[] topCPUs = allCPUs.ToArray();
+            CPU[] topCPUs = allCPUs.OrderByDescending(cpu => cpu.Perf1080p).ToArray();
 
             // Adjust the List order based on their performance at the selected resolution
             if (resolution == 1080)

@@ -72,13 +72,7 @@ namespace FinalProject
             DatabaseLink = link;
         }
 
-        public override void ShowPerf()
-        {
-            WriteLine("Avg. 1080p Performance: {0} FPS", Perf1080p);
-            WriteLine("Avg. 1440p Performance: {0} + FPS", Perf1440p);
-            WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
-        }
-
+        // Returns a string showing the benchmark data and relevant URLs for the GPU
         public override string GetStats()
         {
             string perfInfo = 
