@@ -86,21 +86,22 @@ namespace FinalProject
 
         } // Database constructor
 
-        //Method to add more GPUs to the list  
-        public void AddGPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
-        {
-            GPU newGPU = new GPU
-            {
+
+    //Method to add more GPUs to the list  
+    public void AddGPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p)
+    {
+        GPU newGPU = new GPU
+        { 
                 Brand = brand,
                 Model = model,
                 Price = price,
                 Perf1080p = perf1080p,
                 Perf1440p = perf1440p,
                 Perf2160p = perf2160p
-            };
+        };
 
             gpuList.Add(newGPU);
-        }
+     }
 
     //Method to return items in the gpu list
     public List<GPU> ReturnGPUs()
