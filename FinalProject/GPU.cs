@@ -41,9 +41,6 @@ namespace FinalProject
             Perf2160p = 0;
 			MarketCode = string.Empty;
 			DatabaseCode = string.Empty;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
-
         }
         public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p, string dbCode, string mktCode)
         {
@@ -55,14 +52,12 @@ namespace FinalProject
             Perf2160p = perf2160p;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
         }
 
         // Manually generates the GPU's Marktetplace URL hosted on PCPartPicker.com
         public override void SetMarketLink(string mktCode)
         {
-            string link = $"https://pcpartpicker.com/products/video-card/#sort=price&c={mktCode}";
+            string link = $"https://pcpartpicker.com/products/video-card/#c={mktCode}&sort=price";
             MarketLink = link;
         }
 
@@ -73,17 +68,11 @@ namespace FinalProject
             string gpuModel = this.Model.ToLower().Replace(" ", "-");
 
             // Generate TechPowerUp link with the provided 4-digit code
-            string link = $"https://www.techpowerup.com/gpu-specs/{gpuModel}.c{dbCode}";
+            string link = $"https://www.techpowerup.com/gpu-specs/{gpuModel}.{dbCode}";
             DatabaseLink = link;
         }
 
-        public override void ShowPerf()
-        {
-            WriteLine("Avg. 1080p Performance: {0} FPS", Perf1080p);
-            WriteLine("Avg. 1440p Performance: {0} + FPS", Perf1440p);
-            WriteLine("Avg. 2160p Performance: {0} FPS", Perf2160p);
-        }
-
+        // Returns a string showing the benchmark data and relevant URLs for the GPU
         public override string GetStats()
         {
             string perfInfo = 
@@ -95,6 +84,11 @@ namespace FinalProject
             return perfInfo;
         }
 
+        public override string ToString()
+        {
+            string gpuData = GetPartInfo() + GetStats();
+            return gpuData;
+        }
     } // GPU class
 
 }

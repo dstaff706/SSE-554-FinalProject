@@ -41,13 +41,21 @@ namespace FinalProject
         public string DatabaseCode
         {
             get { return databaseCode; }
-            set { databaseCode = value; }
+            set 
+            { 
+                databaseCode = value;
+                SetDatabaseLink(databaseCode);
+            }
         }
 
         public string MarketCode
         {
             get { return marketCode; }
-            set { marketCode = value; }
+            set 
+            { 
+                marketCode = value;
+                SetMarketLink(marketCode);
+            }
         }
 
         public string DatabaseLink
@@ -63,7 +71,6 @@ namespace FinalProject
 
         public abstract void SetDatabaseLink(string dbCode);
         public abstract void SetMarketLink(string mktCode);
-        public abstract void ShowPerf();
         public abstract string GetStats();
         public string ShowMarketLink()
         {

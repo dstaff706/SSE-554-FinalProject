@@ -55,15 +55,12 @@ namespace FinalProject
             DatabaseLink = link;
         }
 
-        public override void ShowPerf()
-        {
-            WriteLine("Cores: {0}\n    Threads: {1}", Cores, Threads);
-            WriteLine("Avg. 1080p Performance (w/ RTX 4090): {0} FPS", Perf1080p);
-        }
-
+        // Returns a string showing the core/thread count, benchmark data, and relevant URLs for the CPU
         public override string GetStats()
         {
             string perfInfo = 
+                $"Cores: {Cores}\n" + 
+                $"Threads: {Threads}\n" +
                 $"Avg. 1080p Performance {Perf1080p} FPS\n" +
                 ShowDatabaseLink() + $"{DatabaseLink}\n" +
                 ShowMarketLink() + $"{MarketLink}";
@@ -80,8 +77,6 @@ namespace FinalProject
             Perf1080p = 0;
             DatabaseCode = string.Empty;
             MarketCode = string.Empty;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
         }
 
         public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
@@ -94,14 +89,18 @@ namespace FinalProject
             Perf1080p = perf1080p;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
-            SetMarketLink(MarketCode);
-            SetDatabaseLink(DatabaseCode);
         }
 
         public int CompareTo(Object other)
         {
             CPU otherCPU = (CPU)other;
             return (this.Perf1080p.CompareTo(otherCPU.Perf1080p));
+        }
+
+        public override string ToString()
+        {
+            string cpuData = GetPartInfo() + GetStats();
+            return cpuData;
         }
 
     } // CPU class
