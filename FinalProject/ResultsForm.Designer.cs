@@ -209,9 +209,8 @@ namespace FinalProject
             lblPair1.ForeColor = SystemColors.HotTrack;
             lblPair1.Location = new Point(18, 151);
             lblPair1.Name = "lblPair1";
-            lblPair1.Size = new Size(51, 20);
+            lblPair1.Size = new Size(0, 20);
             lblPair1.TabIndex = 16;
-            lblPair1.Text = "label1";
             // 
             // lblPair2
             // 
@@ -220,9 +219,8 @@ namespace FinalProject
             lblPair2.ForeColor = SystemColors.HotTrack;
             lblPair2.Location = new Point(18, 307);
             lblPair2.Name = "lblPair2";
-            lblPair2.Size = new Size(51, 20);
+            lblPair2.Size = new Size(0, 20);
             lblPair2.TabIndex = 17;
-            lblPair2.Text = "label2";
             // 
             // lblPair3
             // 
@@ -231,9 +229,8 @@ namespace FinalProject
             lblPair3.ForeColor = SystemColors.HotTrack;
             lblPair3.Location = new Point(18, 464);
             lblPair3.Name = "lblPair3";
-            lblPair3.Size = new Size(51, 20);
+            lblPair3.Size = new Size(0, 20);
             lblPair3.TabIndex = 18;
-            lblPair3.Text = "label3";
             // 
             // lblPair4
             // 
@@ -242,9 +239,8 @@ namespace FinalProject
             lblPair4.ForeColor = SystemColors.HotTrack;
             lblPair4.Location = new Point(18, 622);
             lblPair4.Name = "lblPair4";
-            lblPair4.Size = new Size(51, 20);
+            lblPair4.Size = new Size(0, 20);
             lblPair4.TabIndex = 19;
-            lblPair4.Text = "label4";
             // 
             // lblPair5
             // 
@@ -253,9 +249,8 @@ namespace FinalProject
             lblPair5.ForeColor = SystemColors.HotTrack;
             lblPair5.Location = new Point(18, 775);
             lblPair5.Name = "lblPair5";
-            lblPair5.Size = new Size(51, 20);
+            lblPair5.Size = new Size(0, 20);
             lblPair5.TabIndex = 20;
-            lblPair5.Text = "label5";
             // 
             // ResultsForm
             // 

@@ -81,72 +81,38 @@ namespace FinalProject
             };
         }
 
-        private void ResolutionTrackBar_Scroll(object sender, EventArgs e)
-        {
-            int trackBarValue = ResolutionTrackBar.Value;
-
-            switch (trackBarValue)
-            {
-                
-                case 0:
-                    LblResolutionSelection.Text = "1080p";
-                    break;
-                case 1:
-                    LblResolutionSelection.Text = "1440p";
-                    break;
-                case 2:
-                    LblResolutionSelection.Text = "2160p";
-                    break;
-                default:
-                    break;
-            }
-
-        }
+        
 
         public int GetResolutionValue()
         {
-            int trackBarValue = ResolutionTrackBar.Value;
+            int reso = 0;
 
-            return trackBarValue switch
+            foreach (RadioButton radioButton in grbResolution.Controls.OfType<RadioButton>())
             {
-                0 => 1080,
-                1 => 1440,
-                2 => 2160,
-                _ => 1080,
-            };
-        }
-
-        private void FpsTrackBar_Scroll(object sender, EventArgs e)
-        {
-            int trackBarValue = FpsTrackBar.Value;
-
-            switch (trackBarValue)
-            {
-                case 0:
-                    LblFpsSelection.Text = "30 fps";
-                    break;
-                case 1:
-                    LblFpsSelection.Text = "60 fps";
-                    break;
-                case 2:
-                    LblFpsSelection.Text = "120 fps";
-                    break;
-                default:
-                    break;
+                if (radioButton.Checked)
+                {
+                    reso = int.Parse(radioButton.Text);
+                    return reso;
+                }
             }
+            return 1080;
         }
+
+        
 
         public int GetFpsValue()
         {
-            int trackBarValue = FpsTrackBar.Value;
+            int fps = 0;
 
-            return trackBarValue switch
+            foreach (RadioButton radioButton in grbFPS.Controls.OfType<RadioButton>())
             {
-                0 => 30,
-                1 => 60,
-                2 => 120,
-                _ => 60,
-            };
+                if (radioButton.Checked)
+                {
+                    fps = int.Parse(radioButton.Text);
+                    return fps;
+                }
+            }
+            return 60;
         }
 
         public string GetSelectedRadioButton()
