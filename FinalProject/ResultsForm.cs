@@ -13,6 +13,7 @@ using System.IO;
 using System.ComponentModel.Design;
 using System.Drawing.Drawing2D;
 using static System.Diagnostics.Debug;
+using System.Globalization;
 
 namespace FinalProject
 {
@@ -50,7 +51,7 @@ namespace FinalProject
 
             // Sort the GPU and CPU lists by descending order (1080p by default)
             GPU[] topGPUs = allGPUs.OrderByDescending(gpu => gpu.Perf1080p).ToArray();
-            CPU[] topCPUs = allCPUs.ToArray(); 
+            CPU[] topCPUs = allCPUs.ToArray();
             Array.Sort(topCPUs); // Sort the Top CPUs by their performance (can change to sorting by price if preferred)
 
             // Adjust the List order based on their performance at the selected resolution
@@ -112,7 +113,7 @@ namespace FinalProject
             {
                 for (int j = 0; j < topCPUs.Length; j++)
                 {
-                    
+
                     // Check if the GPU and CPU pair has already been added
                     if (!usedGPUs.Contains(topGPUs[i]) && (!usedCPUs.Contains(topCPUs[j])))
                     {
@@ -143,9 +144,13 @@ namespace FinalProject
         private void PopulateRichTextBox(List<(GPU, CPU)> topPairs, string imagePath)
         {
             int i = 0;
+            double pairTotal = 0;
+            string pairString = String.Empty;
+
             foreach ((GPU gpu, CPU cpu) in topPairs)
             {
                 RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+                Label labelText = Controls.Find($"lblPair{i + 1}", true).FirstOrDefault() as Label;
 
                 if (richTextBox != null)
                 {
@@ -157,6 +162,10 @@ namespace FinalProject
                     // Display GPU and CPU images
                     DisplayImage("GPU", gpuImagePath, i);
                     DisplayImage("CPU", cpuImagePath, i);
+                    //Display Pairs and Total on label underneath Rich Text Box
+                    pairTotal = gpu.Price + cpu.Price;
+                    pairString = String.Format("{0} {1} + {2} {3} Total: {4}", gpu.Brand, gpu.Model, cpu.Brand, cpu.Model, pairTotal.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+                    labelText.Text = pairString;
                 }
                 i++;
             }
@@ -207,5 +216,9 @@ namespace FinalProject
             return string.Empty;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

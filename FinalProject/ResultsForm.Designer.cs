@@ -44,6 +44,11 @@ namespace FinalProject
             pbCpu4 = new PictureBox();
             pbCpu5 = new PictureBox();
             btnClose = new Button();
+            lblPair1 = new Label();
+            lblPair2 = new Label();
+            lblPair3 = new Label();
+            lblPair4 = new Label();
+            lblPair5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbResult1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbResult2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu1).BeginInit();
@@ -58,154 +63,210 @@ namespace FinalProject
             // 
             // rtbResult1
             // 
-            rtbResult1.Location = new Point(22, 41);
+            rtbResult1.Location = new Point(18, 33);
             rtbResult1.Margin = new Padding(2);
             rtbResult1.Name = "rtbResult1";
-            rtbResult1.Size = new Size(356, 144);
+            rtbResult1.Size = new Size(286, 116);
             rtbResult1.TabIndex = 0;
             rtbResult1.Text = "";
             // 
             // rtbResult2
             // 
-            rtbResult2.Location = new Point(22, 224);
+            rtbResult2.Location = new Point(18, 189);
             rtbResult2.Margin = new Padding(2);
             rtbResult2.Name = "rtbResult2";
-            rtbResult2.Size = new Size(356, 144);
+            rtbResult2.Size = new Size(286, 116);
             rtbResult2.TabIndex = 1;
             rtbResult2.Text = "";
             // 
             // pbResult1
             // 
-            pbResult1.Location = new Point(441, 41);
+            pbResult1.Location = new Point(353, 33);
             pbResult1.Margin = new Padding(2);
             pbResult1.Name = "pbResult1";
-            pbResult1.Size = new Size(332, 144);
+            pbResult1.Size = new Size(266, 115);
             pbResult1.TabIndex = 2;
             pbResult1.TabStop = false;
             // 
             // pbResult2
             // 
-            pbResult2.Location = new Point(441, 224);
+            pbResult2.Location = new Point(353, 189);
             pbResult2.Margin = new Padding(2);
             pbResult2.Name = "pbResult2";
-            pbResult2.Size = new Size(332, 144);
+            pbResult2.Size = new Size(266, 115);
             pbResult2.TabIndex = 3;
             pbResult2.TabStop = false;
             // 
             // pbCpu1
             // 
-            pbCpu1.Location = new Point(780, 41);
-            pbCpu1.Margin = new Padding(4, 4, 4, 4);
+            pbCpu1.Location = new Point(624, 33);
             pbCpu1.Name = "pbCpu1";
-            pbCpu1.Size = new Size(219, 145);
+            pbCpu1.Size = new Size(175, 116);
             pbCpu1.TabIndex = 4;
             pbCpu1.TabStop = false;
             // 
             // pbCpu2
             // 
-            pbCpu2.Location = new Point(780, 224);
-            pbCpu2.Margin = new Padding(4, 4, 4, 4);
+            pbCpu2.Location = new Point(624, 189);
             pbCpu2.Name = "pbCpu2";
-            pbCpu2.Size = new Size(219, 145);
+            pbCpu2.Size = new Size(175, 116);
             pbCpu2.TabIndex = 5;
             pbCpu2.TabStop = false;
             // 
             // rtbResult3
             // 
-            rtbResult3.Location = new Point(22, 408);
+            rtbResult3.Location = new Point(18, 346);
             rtbResult3.Margin = new Padding(2);
             rtbResult3.Name = "rtbResult3";
-            rtbResult3.Size = new Size(356, 144);
+            rtbResult3.Size = new Size(286, 116);
             rtbResult3.TabIndex = 6;
             rtbResult3.Text = "";
             // 
             // rtbResult4
             // 
-            rtbResult4.Location = new Point(22, 592);
+            rtbResult4.Location = new Point(18, 504);
             rtbResult4.Margin = new Padding(2);
             rtbResult4.Name = "rtbResult4";
-            rtbResult4.Size = new Size(356, 144);
+            rtbResult4.Size = new Size(286, 116);
             rtbResult4.TabIndex = 7;
             rtbResult4.Text = "";
             // 
             // rtbResult5
             // 
-            rtbResult5.Location = new Point(22, 771);
+            rtbResult5.Location = new Point(18, 657);
             rtbResult5.Margin = new Padding(2);
             rtbResult5.Name = "rtbResult5";
-            rtbResult5.Size = new Size(356, 144);
+            rtbResult5.Size = new Size(286, 116);
             rtbResult5.TabIndex = 8;
             rtbResult5.Text = "";
             // 
             // pbResult3
             // 
-            pbResult3.Location = new Point(441, 409);
+            pbResult3.Location = new Point(353, 347);
             pbResult3.Margin = new Padding(2);
             pbResult3.Name = "pbResult3";
-            pbResult3.Size = new Size(332, 144);
+            pbResult3.Size = new Size(266, 115);
             pbResult3.TabIndex = 9;
             pbResult3.TabStop = false;
             // 
             // pbResult4
             // 
-            pbResult4.Location = new Point(441, 594);
+            pbResult4.Location = new Point(353, 505);
             pbResult4.Margin = new Padding(2);
             pbResult4.Name = "pbResult4";
-            pbResult4.Size = new Size(332, 144);
+            pbResult4.Size = new Size(266, 115);
             pbResult4.TabIndex = 10;
             pbResult4.TabStop = false;
             // 
             // pbResult5
             // 
-            pbResult5.Location = new Point(441, 772);
+            pbResult5.Location = new Point(353, 658);
             pbResult5.Margin = new Padding(2);
             pbResult5.Name = "pbResult5";
-            pbResult5.Size = new Size(332, 144);
+            pbResult5.Size = new Size(266, 115);
             pbResult5.TabIndex = 11;
             pbResult5.TabStop = false;
             // 
             // pbCpu3
             // 
-            pbCpu3.Location = new Point(780, 409);
-            pbCpu3.Margin = new Padding(4, 4, 4, 4);
+            pbCpu3.Location = new Point(624, 347);
             pbCpu3.Name = "pbCpu3";
-            pbCpu3.Size = new Size(219, 145);
+            pbCpu3.Size = new Size(175, 116);
             pbCpu3.TabIndex = 12;
             pbCpu3.TabStop = false;
             // 
             // pbCpu4
             // 
-            pbCpu4.Location = new Point(780, 594);
-            pbCpu4.Margin = new Padding(4, 4, 4, 4);
+            pbCpu4.Location = new Point(624, 505);
             pbCpu4.Name = "pbCpu4";
-            pbCpu4.Size = new Size(219, 145);
+            pbCpu4.Size = new Size(175, 116);
             pbCpu4.TabIndex = 13;
             pbCpu4.TabStop = false;
             // 
             // pbCpu5
             // 
-            pbCpu5.Location = new Point(780, 772);
-            pbCpu5.Margin = new Padding(4, 4, 4, 4);
+            pbCpu5.Location = new Point(624, 658);
             pbCpu5.Name = "pbCpu5";
-            pbCpu5.Size = new Size(219, 145);
+            pbCpu5.Size = new Size(175, 116);
             pbCpu5.TabIndex = 14;
             pbCpu5.TabStop = false;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(441, 946);
-            btnClose.Margin = new Padding(4, 4, 4, 4);
+            btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnClose.Location = new Point(353, 817);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(118, 36);
+            btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 15;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // lblPair1
+            // 
+            lblPair1.AutoSize = true;
+            lblPair1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPair1.ForeColor = SystemColors.HotTrack;
+            lblPair1.Location = new Point(18, 151);
+            lblPair1.Name = "lblPair1";
+            lblPair1.Size = new Size(51, 20);
+            lblPair1.TabIndex = 16;
+            lblPair1.Text = "label1";
+            // 
+            // lblPair2
+            // 
+            lblPair2.AutoSize = true;
+            lblPair2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPair2.ForeColor = SystemColors.HotTrack;
+            lblPair2.Location = new Point(18, 307);
+            lblPair2.Name = "lblPair2";
+            lblPair2.Size = new Size(51, 20);
+            lblPair2.TabIndex = 17;
+            lblPair2.Text = "label2";
+            // 
+            // lblPair3
+            // 
+            lblPair3.AutoSize = true;
+            lblPair3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPair3.ForeColor = SystemColors.HotTrack;
+            lblPair3.Location = new Point(18, 464);
+            lblPair3.Name = "lblPair3";
+            lblPair3.Size = new Size(51, 20);
+            lblPair3.TabIndex = 18;
+            lblPair3.Text = "label3";
+            // 
+            // lblPair4
+            // 
+            lblPair4.AutoSize = true;
+            lblPair4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPair4.ForeColor = SystemColors.HotTrack;
+            lblPair4.Location = new Point(18, 622);
+            lblPair4.Name = "lblPair4";
+            lblPair4.Size = new Size(51, 20);
+            lblPair4.TabIndex = 19;
+            lblPair4.Text = "label4";
+            // 
+            // lblPair5
+            // 
+            lblPair5.AutoSize = true;
+            lblPair5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPair5.ForeColor = SystemColors.HotTrack;
+            lblPair5.Location = new Point(18, 775);
+            lblPair5.Name = "lblPair5";
+            lblPair5.Size = new Size(51, 20);
+            lblPair5.TabIndex = 20;
+            lblPair5.Text = "label5";
             // 
             // ResultsForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 998);
+            ClientSize = new Size(822, 870);
+            Controls.Add(lblPair5);
+            Controls.Add(lblPair4);
+            Controls.Add(lblPair3);
+            Controls.Add(lblPair2);
+            Controls.Add(lblPair1);
             Controls.Add(btnClose);
             Controls.Add(pbCpu5);
             Controls.Add(pbCpu4);
@@ -236,6 +297,7 @@ namespace FinalProject
             ((System.ComponentModel.ISupportInitialize)pbCpu4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCpu5).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -256,5 +318,10 @@ namespace FinalProject
         private PictureBox pbCpu4;
         private PictureBox pbCpu5;
         private Button btnClose;
+        private Label lblPair1;
+        private Label lblPair2;
+        private Label lblPair3;
+        private Label lblPair4;
+        private Label lblPair5;
     }
 }
