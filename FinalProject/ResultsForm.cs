@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +12,11 @@ using Newtonsoft.Json;
 using System.IO;
 using System.ComponentModel.Design;
 using System.Drawing.Drawing2D;
-using static System.Diagnostics.Debug;
+using System.Diagnostics;
 using System.Globalization;
+using static System.Windows.Forms.LinkLabel;
+using static System.Web.HttpUtility;
+using static System.Diagnostics.Process;
 
 namespace FinalProject
 {
@@ -156,6 +159,11 @@ namespace FinalProject
                 {
                     richTextBox.AppendText(gpu.ToString());
                     richTextBox.AppendText(cpu.ToString());
+
+                    // Event handler for when a URL is clicked
+                    richTextBox.DetectUrls = true;
+                    richTextBox.LinkClicked += HyperLinkClicked;
+
                     // Setting file path for GPU
                     string gpuImagePath = SearchForImage(imagePath, gpu.Model.ToString());
                     string cpuImagePath = SearchForImage(imagePath, cpu.Brand.ToString());
@@ -169,6 +177,20 @@ namespace FinalProject
                 }
                 i++;
             }
+        }
+
+        private void HyperLinkClicked(Object sender, LinkClickedEventArgs e)
+        { 
+            OpenURL(e.LinkText);
+        }
+
+        // Opens the provided URL in the computer's default web browser 
+        private void OpenURL(string link)
+        {
+            
+            string encodedURL = Uri.EscapeUriString(link);
+            
+            Process.Start(encodedURL);
         }
 
         private void DisplayImage(string type, string imagePath, int i)
