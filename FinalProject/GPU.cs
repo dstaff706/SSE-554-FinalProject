@@ -95,16 +95,7 @@ namespace FinalProject
             return perfInfo;
         }
 
-    } // GPU
-
-
-    /*
-    public void RecommendGPU(double userBudget, int userResolution, int userFramerate, List<GPU> gpuList)
-    {
-       
-    }
-
-    */
+    } // GPU class
 
 }
 

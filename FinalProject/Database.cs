@@ -17,7 +17,7 @@ namespace FinalProject
 
         private List<CPU> cpuList = new List<CPU>();
 
-        public Database() 
+        public Database()
         {
             //Creating gpuList that can search through in the other forms
             gpuList = new List<GPU>
@@ -84,7 +84,7 @@ namespace FinalProject
                 new CPU{Brand = "AMD" , Model = "Ryzen 7 5700G", Cores = 8, Threads = 16, Price = 175.70, Perf1080p = 156, DatabaseCode = "c2472", MarketCode = "ycGbt6"},
             };
 
-    }
+        } // Database constructor
 
 
     //Method to add more GPUs to the list  
@@ -205,6 +205,7 @@ namespace FinalProject
         CPU Ryzen_5600 = new CPU("AMD", "Ryzen 5 5600", 6, 12, 129.99, 182, "c2743", "PgcG3C");
         CPU Ryzen_5500 = new CPU("AMD", "Ryzen 5 5500", 6, 12, 99.99, 138, "c2756", "PgcG3C");
         CPU Ryzen_5700G = new CPU("AMD", "Ryzen 7 5700G", 8, 16, 175.70, 156, "c2472", "ycGbt6");
-    }
+
+    } // Database class
 
 }
