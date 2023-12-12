@@ -50,67 +50,74 @@ namespace FinalProject
 
             // Sort the GPU and CPU lists by descending order (1080p by default)
             GPU[] topGPUs = allGPUs.OrderByDescending(gpu => gpu.Perf1080p).ToArray();
-            CPU[] topCPUs = allCPUs.OrderByDescending(cpu => cpu.Perf1080p).ToArray(); // Can change to sorting by price if preferred 
-            //Array.Sort(topCPUs); // Sort the Top CPUs by their price (TODO: See if this is being sorted properly and fix if incorrect)
+            CPU[] topCPUs = allCPUs.ToArray(); 
+            Array.Sort(topCPUs); // Sort the Top CPUs by their performance (can change to sorting by price if preferred)
 
             // Adjust the List order based on their performance at the selected resolution
             if (resolution == 1080)
             {
                 topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf1080p)
-                   .Where (gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf1080p >= fps))
+                   .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand))
                    .ToArray();
             }
 
             else if (resolution == 1440)
             {
-                // TODO: Remove Take(5) after pairing optimization is complete
                 topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf1440p)
-                   .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf1440p >= fps))
-                   .Take(5)
+                   .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand))
                    .ToArray();
             }
 
             else if (resolution == 2160)
             {
-                // TODO: Remove Take(5) after pairing optimization is complete
                 topGPUs = topGPUs.OrderByDescending(gpu => gpu.Perf2160p)
-                    .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand) && (gpu.Perf2160p >= fps))
-                    .Take(5)
+                    .Where(gpu => (gpu.Price <= budget) && (gpu.Brand == brand))
                     .ToArray();
             }
 
-            PopulateGPURichTextBox(topGPUs, imagesPath);
-            //PopulateCPURichTextBox(topCPUs, imagesPath);
             List<(GPU, CPU)> topPairs = new List<(GPU, CPU)>(); // Holds the best CPU/GPU pairs in a list
 
-            // Get the Top 5 GPU/CPU pairs 
-            GetTopPairs(topGPUs, topCPUs, topPairs, budget);
+            // Get and display the Top 5 GPU/CPU pairs in the results form 
+            GetTopPairs(topGPUs, topCPUs, topPairs, budget, resolution);
+            PopulateRichTextBox(topPairs, imagesPath);
 
-            // Write their info to the Debug terminal (TODO: Remove before submission) 
-            foreach ((GPU gpu,  CPU cpu) in topPairs) 
-            {
-                WriteLine(gpu.ToString());
-                WriteLine(cpu.ToString());
-            }
-            
         }
 
-        private void GetTopPairs(GPU[] topGPUs, CPU[] topCPUs, List<(GPU, CPU)> topPairs, double budget)
+        private void GetTopPairs(GPU[] topGPUs, CPU[] topCPUs, List<(GPU, CPU)> topPairs, double budget, int resolution)
         {
             // Hold the GPUs and CPUs that were already recommended so they aren't suggested again
-            HashSet <GPU> usedGPUs = new HashSet<GPU>();
-            HashSet <CPU> usedCPUs = new HashSet<CPU>();
+            List<GPU> usedGPUs = new List<GPU>();
+            List<CPU> usedCPUs = new List<CPU>();
 
-            
+            // Adjust how much money in the budget should go towards the GPU, depending on the resolution 
+            double maxBudgetGPU = 0;
+            switch (resolution)
+            {
+                // Higher Resolution = Higher GPU Budget
+                case 1080:
+                    maxBudgetGPU = (0.5 * budget);
+                    break;
+                case 1440:
+                    maxBudgetGPU = (0.65 * budget);
+                    break;
+                case 2160:
+                    maxBudgetGPU = (0.75 * budget);
+                    break;
+                default:
+                    maxBudgetGPU = (0.60 * budget);
+                    break;
+            }
+
             for (int i = 0; i < topGPUs.Length; i++)
             {
                 for (int j = 0; j < topCPUs.Length; j++)
                 {
+                    
                     // Check if the GPU and CPU pair has already been added
                     if (!usedGPUs.Contains(topGPUs[i]) && (!usedCPUs.Contains(topCPUs[j])))
                     {
                         // Test: Don't use GPUs that take up more than 70% of the total budget (remove or adjust later)
-                        if (topGPUs[i].Price <= (0.7  * budget))
+                        if (topGPUs[i].Price <= maxBudgetGPU)
                         {
                             double totalPrice = topGPUs[i].Price + topCPUs[j].Price;
 
@@ -123,47 +130,35 @@ namespace FinalProject
                             }
                         }
                     }
-                        
+
                 }
             }
         }
 
-        private void PopulateGPURichTextBox(GPU[] topGPUs, string imagePath)
+        /*
+         * Add the relevant GPU and CPU data from the to the pairs to the rich text boxes
+         * Each pair populates a single text box, and displays their assigned images
+         * next to each row of pairs
+         */
+        private void PopulateRichTextBox(List<(GPU, CPU)> topPairs, string imagePath)
         {
-            for (int i = 0; i < topGPUs.Length; i++)
+            int i = 0;
+            foreach ((GPU gpu, CPU cpu) in topPairs)
             {
-                GPU gpu = topGPUs[i];
-
                 RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
 
                 if (richTextBox != null)
                 {
                     richTextBox.AppendText(gpu.ToString());
-
-                    //setting file path for GPU
-                    string imageFilePath = SearchForImage(imagePath, topGPUs[i].Model.ToString());
-                    //display GPU image
-                    DisplayImage("GPU", imageFilePath, i);
-                }
-            }
-        }
-
-        private void PopulateCPURichTextBox(CPU[] topCPUs, string imagePath)
-        {
-            for (int i = 0; i < topCPUs.Length; i++)
-            {
-                CPU cpu = topCPUs[i];
-
-                RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
-
-                if (richTextBox != null)
-                {
                     richTextBox.AppendText(cpu.ToString());
-                    //setting file path for CPU
-                    string imageFilePath = SearchForImage(imagePath, topCPUs[i].Model.ToString());
-                    //display CPU image
-                    DisplayImage("CPU", imageFilePath, i);
+                    // Setting file path for GPU
+                    string gpuImagePath = SearchForImage(imagePath, gpu.Model.ToString());
+                    string cpuImagePath = SearchForImage(imagePath, cpu.Brand.ToString());
+                    // Display GPU and CPU images
+                    DisplayImage("GPU", gpuImagePath, i);
+                    DisplayImage("CPU", cpuImagePath, i);
                 }
+                i++;
             }
         }
 
@@ -211,6 +206,6 @@ namespace FinalProject
 
             return string.Empty;
         }
-               
+
     }
 }

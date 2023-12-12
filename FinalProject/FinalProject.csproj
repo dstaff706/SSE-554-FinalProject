@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\AMD.jpg" />
     <None Remove="Images\Arc A380.jpg" />
     <None Remove="Images\Arc A580.jpg" />
     <None Remove="Images\Arc A750.jpg" />
@@ -41,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\AMD.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Geforce RTX 3050.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -123,9 +127,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Intel.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Ryzen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

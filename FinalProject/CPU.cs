@@ -92,14 +92,16 @@ namespace FinalProject
         }
 
         public int CompareTo(Object other)
-        {
+        {   
+            // Used to sort the array in descending order from best performance to worst
             CPU otherCPU = (CPU)other;
-            return (this.Perf1080p.CompareTo(otherCPU.Perf1080p));
+            return (otherCPU.Perf1080p.CompareTo(this.Perf1080p));
         }
 
         public override string ToString()
         {
-            string cpuData = GetPartInfo() + GetStats();
+            string cpuLabel = "\n\n************ CPU **********\n";
+            string cpuData = cpuLabel + GetPartInfo() + GetStats();
             return cpuData;
         }
 
