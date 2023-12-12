@@ -1,4 +1,4 @@
-﻿namespace FinalProject
+namespace FinalProject
 {
     partial class ResultsForm
     {
@@ -58,148 +58,154 @@
             // 
             // rtbResult1
             // 
-            rtbResult1.Location = new Point(18, 33);
+            rtbResult1.Location = new Point(22, 41);
             rtbResult1.Margin = new Padding(2);
             rtbResult1.Name = "rtbResult1";
-            rtbResult1.Size = new Size(286, 116);
+            rtbResult1.Size = new Size(356, 144);
             rtbResult1.TabIndex = 0;
             rtbResult1.Text = "";
             // 
             // rtbResult2
             // 
-            rtbResult2.Location = new Point(18, 179);
+            rtbResult2.Location = new Point(22, 224);
             rtbResult2.Margin = new Padding(2);
             rtbResult2.Name = "rtbResult2";
-            rtbResult2.Size = new Size(286, 116);
+            rtbResult2.Size = new Size(356, 144);
             rtbResult2.TabIndex = 1;
             rtbResult2.Text = "";
             // 
             // pbResult1
             // 
-            pbResult1.Location = new Point(353, 33);
+            pbResult1.Location = new Point(441, 41);
             pbResult1.Margin = new Padding(2);
             pbResult1.Name = "pbResult1";
-            pbResult1.Size = new Size(266, 115);
+            pbResult1.Size = new Size(332, 144);
             pbResult1.TabIndex = 2;
             pbResult1.TabStop = false;
             // 
             // pbResult2
             // 
-            pbResult2.Location = new Point(353, 179);
+            pbResult2.Location = new Point(441, 224);
             pbResult2.Margin = new Padding(2);
             pbResult2.Name = "pbResult2";
-            pbResult2.Size = new Size(266, 115);
+            pbResult2.Size = new Size(332, 144);
             pbResult2.TabIndex = 3;
             pbResult2.TabStop = false;
             // 
             // pbCpu1
             // 
-            pbCpu1.Location = new Point(624, 33);
+            pbCpu1.Location = new Point(780, 41);
+            pbCpu1.Margin = new Padding(4, 4, 4, 4);
             pbCpu1.Name = "pbCpu1";
-            pbCpu1.Size = new Size(175, 116);
+            pbCpu1.Size = new Size(219, 145);
             pbCpu1.TabIndex = 4;
             pbCpu1.TabStop = false;
             // 
             // pbCpu2
             // 
-            pbCpu2.Location = new Point(624, 179);
+            pbCpu2.Location = new Point(780, 224);
+            pbCpu2.Margin = new Padding(4, 4, 4, 4);
             pbCpu2.Name = "pbCpu2";
-            pbCpu2.Size = new Size(175, 116);
+            pbCpu2.Size = new Size(219, 145);
             pbCpu2.TabIndex = 5;
             pbCpu2.TabStop = false;
             // 
             // rtbResult3
             // 
-            rtbResult3.Location = new Point(18, 326);
+            rtbResult3.Location = new Point(22, 408);
             rtbResult3.Margin = new Padding(2);
             rtbResult3.Name = "rtbResult3";
-            rtbResult3.Size = new Size(286, 116);
+            rtbResult3.Size = new Size(356, 144);
             rtbResult3.TabIndex = 6;
             rtbResult3.Text = "";
             // 
             // rtbResult4
             // 
-            rtbResult4.Location = new Point(18, 474);
+            rtbResult4.Location = new Point(22, 592);
             rtbResult4.Margin = new Padding(2);
             rtbResult4.Name = "rtbResult4";
-            rtbResult4.Size = new Size(286, 116);
+            rtbResult4.Size = new Size(356, 144);
             rtbResult4.TabIndex = 7;
             rtbResult4.Text = "";
             // 
             // rtbResult5
             // 
-            rtbResult5.Location = new Point(18, 617);
+            rtbResult5.Location = new Point(22, 771);
             rtbResult5.Margin = new Padding(2);
             rtbResult5.Name = "rtbResult5";
-            rtbResult5.Size = new Size(286, 116);
+            rtbResult5.Size = new Size(356, 144);
             rtbResult5.TabIndex = 8;
             rtbResult5.Text = "";
             // 
             // pbResult3
             // 
-            pbResult3.Location = new Point(353, 327);
+            pbResult3.Location = new Point(441, 409);
             pbResult3.Margin = new Padding(2);
             pbResult3.Name = "pbResult3";
-            pbResult3.Size = new Size(266, 115);
+            pbResult3.Size = new Size(332, 144);
             pbResult3.TabIndex = 9;
             pbResult3.TabStop = false;
             // 
             // pbResult4
             // 
-            pbResult4.Location = new Point(353, 475);
+            pbResult4.Location = new Point(441, 594);
             pbResult4.Margin = new Padding(2);
             pbResult4.Name = "pbResult4";
-            pbResult4.Size = new Size(266, 115);
+            pbResult4.Size = new Size(332, 144);
             pbResult4.TabIndex = 10;
             pbResult4.TabStop = false;
             // 
             // pbResult5
             // 
-            pbResult5.Location = new Point(353, 618);
+            pbResult5.Location = new Point(441, 772);
             pbResult5.Margin = new Padding(2);
             pbResult5.Name = "pbResult5";
-            pbResult5.Size = new Size(266, 115);
+            pbResult5.Size = new Size(332, 144);
             pbResult5.TabIndex = 11;
             pbResult5.TabStop = false;
             // 
             // pbCpu3
             // 
-            pbCpu3.Location = new Point(624, 327);
+            pbCpu3.Location = new Point(780, 409);
+            pbCpu3.Margin = new Padding(4, 4, 4, 4);
             pbCpu3.Name = "pbCpu3";
-            pbCpu3.Size = new Size(175, 116);
+            pbCpu3.Size = new Size(219, 145);
             pbCpu3.TabIndex = 12;
             pbCpu3.TabStop = false;
             // 
             // pbCpu4
             // 
-            pbCpu4.Location = new Point(624, 475);
+            pbCpu4.Location = new Point(780, 594);
+            pbCpu4.Margin = new Padding(4, 4, 4, 4);
             pbCpu4.Name = "pbCpu4";
-            pbCpu4.Size = new Size(175, 116);
+            pbCpu4.Size = new Size(219, 145);
             pbCpu4.TabIndex = 13;
             pbCpu4.TabStop = false;
             // 
             // pbCpu5
             // 
-            pbCpu5.Location = new Point(624, 618);
+            pbCpu5.Location = new Point(780, 772);
+            pbCpu5.Margin = new Padding(4, 4, 4, 4);
             pbCpu5.Name = "pbCpu5";
-            pbCpu5.Size = new Size(175, 116);
+            pbCpu5.Size = new Size(219, 145);
             pbCpu5.TabIndex = 14;
             pbCpu5.TabStop = false;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(353, 757);
+            btnClose.Location = new Point(441, 946);
+            btnClose.Margin = new Padding(4, 4, 4, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(94, 29);
+            btnClose.Size = new Size(118, 36);
             btnClose.TabIndex = 15;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
             // 
             // ResultsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 798);
+            ClientSize = new Size(1028, 998);
             Controls.Add(btnClose);
             Controls.Add(pbCpu5);
             Controls.Add(pbCpu4);

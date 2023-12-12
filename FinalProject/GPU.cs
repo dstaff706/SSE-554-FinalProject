@@ -86,7 +86,8 @@ namespace FinalProject
 
         public override string ToString()
         {
-            string gpuData = GetPartInfo() + GetStats();
+            string gpuLabel = "************ GPU **********\n";
+            string gpuData = gpuLabel + GetPartInfo() + GetStats();
             return gpuData;
         }
     } // GPU class
