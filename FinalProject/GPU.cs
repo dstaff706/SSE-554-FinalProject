@@ -57,7 +57,7 @@ namespace FinalProject
         // Manually generates the GPU's Marktetplace URL hosted on PCPartPicker.com
         public override void SetMarketLink(string mktCode)
         {
-            string link = $"https://pcpartpicker.com/products/video-card/#c={mktCode}&sort=price";
+            string link = $"https://pcpartpicker.com/products/video-card/#sort=price&c={mktCode}";
             MarketLink = link;
         }
 

@@ -26,7 +26,7 @@ namespace FinalProject
             gpuList = new List<GPU>
             {
                 // NVIDIA GPUs (Ada Lovelace, Ampere & Turing generations)
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4090", Price = 1600, Perf1080p = 243, Perf1440p = 209, Perf2160p = 133, DatabaseCode = "c3889", MarketCode = "539" },
+                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4090", Price = 1599.99, Perf1080p = 243, Perf1440p = 209, Perf2160p = 133, DatabaseCode = "c3889", MarketCode = "539" },
                 new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4080", Price = 1199.99, Perf1080p = 214, Perf1440p = 171, Perf2160p = 103, DatabaseCode = "c3888", MarketCode = "542"  },
                 new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070 Ti", Price = 729.99, Perf1080p = 187, Perf1440p = 141, Perf2160p = 82, DatabaseCode = "c3950", MarketCode = "549"  },
                 new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070", Price = 539.99, Perf1080p = 153, Perf1440p = 115, Perf2160p = 67, DatabaseCode = "c3924", MarketCode = "550"  },
@@ -112,7 +112,7 @@ namespace FinalProject
                     Perf2160p = perf2160p
             };
 
-                gpuList.Add(newGPU);
+            gpuList.Add(newGPU);
          }
 
         //Method to return items in the gpu list
@@ -124,19 +124,19 @@ namespace FinalProject
         //Adds CPU to the cpu list
         public void AddCPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
         {
-                CPU newCPU = new CPU
-                {
-                    Brand = brand,
-                    Model = model,
-                    Cores = cores,
-                    Threads = threads,
-                    Price = price,
-                    Perf1080p = perf1080p,
-                    DatabaseCode = dbCode,
-                    MarketCode = mktCode
-                };
+            CPU newCPU = new CPU
+            {
+                Brand = brand,
+                Model = model,
+                Cores = cores,
+                Threads = threads,
+                Price = price,
+                Perf1080p = perf1080p,
+                DatabaseCode = dbCode,
+                MarketCode = mktCode
+            };
             
-                cpuList.Add(newCPU);
+            cpuList.Add(newCPU);
         }
 
         //Returns the cpu list
