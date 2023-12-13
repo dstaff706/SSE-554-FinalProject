@@ -17,6 +17,8 @@ using System.Globalization;
 using static System.Windows.Forms.LinkLabel;
 using static System.Web.HttpUtility;
 using static System.Diagnostics.Process;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 
 namespace FinalProject
 {
@@ -187,10 +189,31 @@ namespace FinalProject
         // Opens the provided URL in the computer's default web browser 
         private void OpenURL(string link)
         {
-            
-            string encodedURL = Uri.EscapeUriString(link);
-            
-            Process.Start(encodedURL);
+            try
+            {
+                Process.Start(link);
+            }
+            catch
+            {
+                // Troubleshooting URL-opening code harvested from this: https://github.com/dotnet/corefx/issues/10361
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    link = link.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo(link) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", link);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", link);
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         private void DisplayImage(string type, string imagePath, int i)
