@@ -186,6 +186,12 @@ namespace FinalProject
             }
         }
 
+        /*
+         * Calls the function to open either the TechPowerUp database link or PC Part Picker
+         * marketplace link in the default web browser.
+         * This command should only be triggered when either the 
+         * "TPU Database Link" or "PC Part Picker Link" text is clicked on.
+         */
         private void HyperLinkClicked(Object sender, LinkClickedEventArgs e)
         {
             OpenURL(e.LinkText);

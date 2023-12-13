@@ -81,17 +81,6 @@ namespace FinalProject
             return "TPU Database Link: ";
         }
 
-        /*
-         * Opens either the TechPowerUp database link or PC Part Picker
-         * marketplace link in the default web browser.
-         * This command should only be triggered when either the 
-         * "TPU Database Link" or "PC Part Picker Link" text is clicked on.
-         */
-        public void OpenLink(string link)
-        {
-            Process.Start(new ProcessStartInfo(link) { UseShellExecute = true});
-        }
-
         public string GetPartInfo()
         {
             string partInfo = $"{Brand} {Model}\n" +
