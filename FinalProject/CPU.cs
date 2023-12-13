@@ -100,7 +100,7 @@ namespace FinalProject
 
         public override string ToString()
         {
-            string cpuLabel = "\n\n************ CPU **********\n";
+            string cpuLabel = "************ CPU **********\n";
             string cpuData = cpuLabel + GetPartInfo() + GetStats();
             return cpuData;
         }

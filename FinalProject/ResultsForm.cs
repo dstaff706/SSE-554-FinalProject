@@ -154,17 +154,20 @@ namespace FinalProject
 
             foreach ((GPU gpu, CPU cpu) in topPairs)
             {
-                RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBoxGPU = Controls.Find($"gpuResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBoxCPU = Controls.Find($"cpuResult{i + 1}", true).FirstOrDefault() as RichTextBox;
                 Label labelText = Controls.Find($"lblPair{i + 1}", true).FirstOrDefault() as Label;
 
-                if (richTextBox != null)
+                if (richTextBoxGPU != null && richTextBoxCPU != null)
                 {
-                    richTextBox.AppendText(gpu.ToString());
-                    richTextBox.AppendText(cpu.ToString());
+                    richTextBoxGPU.AppendText(gpu.ToString());
+                    richTextBoxCPU.AppendText(cpu.ToString());
 
                     // Force the text box to detect URLs; add event handler for when a URL is clicked
-                    richTextBox.DetectUrls = true;
-                    richTextBox.LinkClicked += HyperLinkClicked;
+                    richTextBoxGPU.DetectUrls = true;
+                    richTextBoxGPU.LinkClicked += HyperLinkClicked;
+                    richTextBoxCPU.DetectUrls = true;
+                    richTextBoxCPU.LinkClicked += HyperLinkClicked;
 
                     // Setting file path for GPU
                     string gpuImagePath = SearchForImage(imagePath, gpu.Model.ToString());
@@ -184,7 +187,7 @@ namespace FinalProject
         }
 
         private void HyperLinkClicked(Object sender, LinkClickedEventArgs e)
-        { 
+        {
             OpenURL(e.LinkText);
         }
 
