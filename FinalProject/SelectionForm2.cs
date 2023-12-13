@@ -24,6 +24,7 @@ namespace FinalProject
 
         }
 
+        //Change label to show value of track bar selection in dollar amount
         private void TBBudget_Scroll(object sender, EventArgs e)
         {
             int trackBarValue = TBBudget.Value;
@@ -34,27 +35,42 @@ namespace FinalProject
                     LblBudgetSelection.Text = "$400";
                     break;
                 case 1:
-                    LblBudgetSelection.Text = "$725";
+                    LblBudgetSelection.Text = "$600";
                     break;
                 case 2:
-                    LblBudgetSelection.Text = "$1050";
+                    LblBudgetSelection.Text = "$800";
                     break;
                 case 3:
-                    LblBudgetSelection.Text = "$1375";
+                    LblBudgetSelection.Text = "$1000";
                     break;
                 case 4:
-                    LblBudgetSelection.Text = "$1700";
+                    LblBudgetSelection.Text = "$1200";
                     break;
                 case 5:
-                    LblBudgetSelection.Text = "$2025";
+                    LblBudgetSelection.Text = "$1400";
                     break;
                 case 6:
-                    LblBudgetSelection.Text = "$2350";
+                    LblBudgetSelection.Text = "$1600";
                     break;
                 case 7:
-                    LblBudgetSelection.Text = "$2675";
+                    LblBudgetSelection.Text = "$1800";
                     break;
                 case 8:
+                    LblBudgetSelection.Text = "$2000";
+                    break;
+                case 9:
+                    LblBudgetSelection.Text = "$2200";
+                    break;
+                case 10:
+                    LblBudgetSelection.Text = "$2400";
+                    break;
+                case 11:
+                    LblBudgetSelection.Text = "$2600";
+                    break;
+                case 12:
+                    LblBudgetSelection.Text = "$2800";
+                    break;
+                case 13:
                     LblBudgetSelection.Text = "$3000";
                     break;
                 default:
@@ -62,6 +78,7 @@ namespace FinalProject
             }
         }
 
+        //Return the integer value of track bar selection
         public int GetBudget()
         {
             int trackBarValue = TBBudget.Value;
@@ -69,20 +86,25 @@ namespace FinalProject
             return trackBarValue switch
             {
                 0 => 400,
-                1 => 725,
-                2 => 1050,
-                3 => 1375,
-                4 => 1700,
-                5 => 2025,
-                6 => 2350,
-                7 => 2675,
-                8 => 3000,
-                _ => 1375
+                1 => 600,
+                2 => 800,
+                3 => 1000,
+                4 => 1200,
+                5 => 1400,
+                6 => 1600,
+                7 => 1800,
+                8 => 2000,
+                9 => 2200,
+                10 => 2400,
+                11 => 2600,
+                12 => 2800,
+                13 => 3000,
+                _ => 1500
             };
         }
 
         
-
+        //Return selected value from the Resolution Group Box as an integer
         public int GetResolutionValue()
         {
             int reso = 0;
@@ -98,8 +120,8 @@ namespace FinalProject
             return 1080;
         }
 
-        
 
+        //Return selected value from the FPS Group Box as an integer
         public int GetFpsValue()
         {
             int fps = 0;
@@ -115,6 +137,7 @@ namespace FinalProject
             return 60;
         }
 
+        //Return selected value from the Brand Group Box as an string
         public string GetSelectedRadioButton()
         {
             foreach (RadioButton radioButton in BrandGroupBox.Controls.OfType<RadioButton>())
@@ -127,6 +150,7 @@ namespace FinalProject
             return "NA";
         }
 
+        //Save user input into a UserSelection type object, save the data to a file, and then open the Results Form
         private void SaveSelectionData()
         {
             UserSelection selectionData = new()
@@ -152,6 +176,7 @@ namespace FinalProject
 
         }
 
+        //Save data and open Results form
         private void BtnRecommend_Click(object sender, EventArgs e)
         {
             SaveSelectionData();
