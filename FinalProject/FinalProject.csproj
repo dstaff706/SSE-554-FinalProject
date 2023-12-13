@@ -14,6 +14,7 @@
     <None Remove="Images\Arc A580.jpg" />
     <None Remove="Images\Arc A750.jpg" />
     <None Remove="Images\Arc A770.jpg" />
+    <None Remove="Images\Geforce RTX 2060.jpg" />
     <None Remove="Images\Geforce RTX 3050.jpg" />
     <None Remove="Images\Geforce RTX 3060 Ti.jpg" />
     <None Remove="Images\Geforce RTX 3060.jpg" />
@@ -43,6 +44,9 @@
 
   <ItemGroup>
     <Content Include="Images\AMD.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Geforce RTX 2060.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Geforce RTX 3050.jpg">

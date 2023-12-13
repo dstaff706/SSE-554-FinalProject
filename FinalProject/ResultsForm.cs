@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +12,13 @@ using Newtonsoft.Json;
 using System.IO;
 using System.ComponentModel.Design;
 using System.Drawing.Drawing2D;
-using static System.Diagnostics.Debug;
+using System.Diagnostics;
 using System.Globalization;
+using static System.Windows.Forms.LinkLabel;
+using static System.Web.HttpUtility;
+using static System.Diagnostics.Process;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 
 namespace FinalProject
 {
@@ -139,7 +144,7 @@ namespace FinalProject
         /*
          * Add the relevant GPU and CPU data from the to the pairs to the rich text boxes
          * Each pair populates a single text box, and displays their assigned images
-         * next to each row of pairs
+         * next to each row of pairs. Combined pair prices will be displayed below each pair
          */
         private void PopulateRichTextBox(List<(GPU, CPU)> topPairs, string imagePath)
         {
@@ -149,25 +154,70 @@ namespace FinalProject
 
             foreach ((GPU gpu, CPU cpu) in topPairs)
             {
-                RichTextBox richTextBox = Controls.Find($"rtbResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBoxGPU = Controls.Find($"gpuResult{i + 1}", true).FirstOrDefault() as RichTextBox;
+                RichTextBox richTextBoxCPU = Controls.Find($"cpuResult{i + 1}", true).FirstOrDefault() as RichTextBox;
                 Label labelText = Controls.Find($"lblPair{i + 1}", true).FirstOrDefault() as Label;
 
-                if (richTextBox != null)
+                if (richTextBoxGPU != null && richTextBoxCPU != null)
                 {
-                    richTextBox.AppendText(gpu.ToString());
-                    richTextBox.AppendText(cpu.ToString());
+                    richTextBoxGPU.AppendText(gpu.ToString());
+                    richTextBoxCPU.AppendText(cpu.ToString());
+
+                    // Force the text box to detect URLs; add event handler for when a URL is clicked
+                    richTextBoxGPU.DetectUrls = true;
+                    richTextBoxGPU.LinkClicked += HyperLinkClicked;
+                    richTextBoxCPU.DetectUrls = true;
+                    richTextBoxCPU.LinkClicked += HyperLinkClicked;
+
                     // Setting file path for GPU
                     string gpuImagePath = SearchForImage(imagePath, gpu.Model.ToString());
                     string cpuImagePath = SearchForImage(imagePath, cpu.Brand.ToString());
+
                     // Display GPU and CPU images
                     DisplayImage("GPU", gpuImagePath, i);
                     DisplayImage("CPU", cpuImagePath, i);
+
                     //Display Pairs and Total on label underneath Rich Text Box
                     pairTotal = gpu.Price + cpu.Price;
                     pairString = String.Format("{0} {1} + {2} {3} Total: {4}", gpu.Brand, gpu.Model, cpu.Brand, cpu.Model, pairTotal.ToString("C", CultureInfo.GetCultureInfo("en-US")));
                     labelText.Text = pairString;
                 }
                 i++;
+            }
+        }
+
+        private void HyperLinkClicked(Object sender, LinkClickedEventArgs e)
+        {
+            OpenURL(e.LinkText);
+        }
+
+        // Opens the provided URL in the computer's default web browser 
+        private void OpenURL(string link)
+        {
+            try
+            {
+                Process.Start(link);
+            }
+            catch
+            {
+                // Troubleshooting URL-opening code harvested from this: https://github.com/dotnet/corefx/issues/10361
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    //link = link.Replace("&", "&");
+                    Process.Start(new ProcessStartInfo(link) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", link);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", link);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 
