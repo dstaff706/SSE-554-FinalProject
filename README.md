@@ -1,4 +1,4 @@
-# SSE 550 - Final Project
+# SSE 554 - Final Project (Imported from Object-Oriented II Project)
 
 Problem Statement
 
