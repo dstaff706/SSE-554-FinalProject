@@ -1,0 +1,114 @@
+######
+CPUs
+######
+* AMD 5000 & 7000 generations only
+* Intel 12th, 13th, & 14th gen CPUs only
+
+#############
+NVIDIA GPUs
+#############
+* Last 2 NVIDIA Generations only (RTX 30 & 40 Series)
+	- RTX 2060 is exception
+* No RTX 3050s more than $250
+* No RTX 3060s more than $300
+* No RTX 3060 8GB models
+* No RTX 3060 Tis more than $400
+* No RTX 3070s more than $500
+* No RTX 3070 Tis more than $500
+* No RTX 3080s
+	- Was replaced by the 4070 & 4070 Super models
+* No RTX 4060s more than $350
+* No RTX 4060 Tis more than $450
+* No RTX 4070s more than $600
+* No RTX 4070 Supers more than $700
+* No RTX 4070 Tis more than $800
+	- Need to add 4070 Ti Super models
+* No RTX 4080s more than $1200
+	- Need to add 4080 Super models
+* No RTX 4090s more than $2000
+
+##########
+AMD GPUs
+##########
+* Last 2 AMD Generations only (Radeon RX 60000 & 70000 Series)
+	- 5600 XT and 5700 XT are exceptions
+* No 6500 XTs more than $175
+* No 6600s more than $220
+* No 6600 XTs more than $250
+* No 6650 XTs more than $270
+* No 6700 XTs more than $350
+* No 6750 XTs more than $380
+* No 6800s more than $420
+* No 6800 XTs more than $500
+* No 6900 XTs more than $550
+* No 6950 XTs more than $600
+* No 7600s more than $280
+* No 7700 XTs more than $450
+* No 7800 XTs more than $550
+* No 7900 XTs more than $800
+* No 7900 XTXs more than $1050
+
+######
+SSDs
+######
+* 1TB SSDs only
+* PCIe 3.0 & 4.0 only
+* No SSDs over $150
+* Limited brand list: 
+	- Corsair
+	- Crucial
+	- Inland
+	- Intel
+	- Kingston
+	- Sabrent
+	- Samsung
+	- Seagate
+	- TEAMGROUP
+	- Western Digital
+
+#####
+RAM
+#####
+* Only 16 or 32 GB kits
+* Only DDR4 or DDR5 modules
+	- DDR4 CAS Latency Modules: CL16 & CL18
+	- DDR5 CAS Latency Modules: CL30, CL36 & CL40
+* No RAM kits more than $150
+* Limited brand list: 
+	- Corsair
+	- G.Skill
+	- Kingston
+
+######
+PSUs
+######
+* Semi-modular or Full-modular PSUs only
+* 80+ Bronze or Gold Efficiency models only
+* Wattage range from 500 - 1200
+* Limited Brand List:
+	- be quiet!
+	- Cooler Master
+	- Corsair
+	- FSP Group
+	- Montech
+	- MSI
+	- SeaSonic
+	- Silverstone
+	- Super Flower
+	- Thermaltake
+	
+######
+Cases
+######
+* Limited Brand List:
+	- Asus
+	- BitFenix
+	- Cooler Master
+	- Corsair
+	- Deepcool
+	- Fractal Design
+	- Lian Li
+	- NZXT
+	- Phanteks
+	- Thermaltake
+* 
