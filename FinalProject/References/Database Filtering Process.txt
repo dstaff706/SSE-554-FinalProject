@@ -111,4 +111,86 @@ Cases
 	- NZXT
 	- Phanteks
 	- Thermaltake
-* 
+
+
+######################
+Scoring System Rules
+######################
+
+### CPU ###
+ * Max Points: 25 (Weight Coeff = 0.25)
+ * Score Checks:
+	- Mobo Compatibility (10 Points)
+		* 0 points if not compatible
+		* Check CPU Socket with Motherboard Socket (AM4, AM5, LGA1700)
+		* Option: Don't check CPU perf if not compatible with Motherboard
+	- CPU 1080p Gaming Performance (15 Points)
+		* 15 points if perf_1080p >= 225 FPS
+		* 12 points if perf_1080p >= 200 AND perf_1080p < 225  
+		* 9 points if perf_1080p >= 180 AND perf_1080p < 200
+		* 6 points if perf_1080p >= 150 AND perf_1080p < 180
+		* 3 points if perf_1080p < 150
+
+### GPU ###
+* Max Points: 25 (Weight Coeff = 0.25)
+* Score Checks:
+	- Case Compatibility (10 Points)
+		* 10 points if GPU Length <= Case's Max GPU Length.
+		* 0 points otherwise
+	- GPU Gaming Performance (15 points)
+		* Use Average 1080p Performance (perf_1080p) 
+		* 3 points if less than 40 FSP
+		* 6 points if perf >= 40 AND perf < 60
+		* 9 points if perf >= 60 AND perf < 90
+		* 12 points if perf >= 90 AND perf < 120
+		* 15 points if perf >= 120
+
+### Mobo ###
+* Max Points: 20 (Weight Coeff = 0.20)
+* Score Checks:
+	- RAM Compatibility (5 Points)
+		* Check 'RAM_Type' value
+	- Chipset Level (5 Points)
+		* Entry: 5 Points
+		* Mid: 10 Points
+		* High: 15 Points
+
+### RAM ###
+* Max Points: 10 (Weight Coeff = 0.10)
+* Score Checks:
+	- GB Count (10 points)
+		- 16 GB: 5 Points
+		- 32 GB: 10 Points
+
+### PSU ###
+* Max Points: 10 Points (Weight Coeff = 0.10)
+* Score Checks: 
+	- Case Compatibility (5 Points)
+	- CPU + GPU Wattage Support (5 Points)
+		* If (CPU TDP + GPU TDP) <= PSU Wattage 
+			OR PSU Wattage >= GPU's 'rec_PSU' -----> 5 Points
+		
+### Case ###
+* Max Points: 10 (Weight Coefff = 0.10)
+* Score Checks:
+	- Mobo Compatibility (10 Points)
+		* ATX Motherboard Compatibility: ATX Cases
+		* Micro ATX Motherboard Compatibility: ATX, Micro ATX Cases
+		* Mini ITX Motherboard Compatibility: Mini ITX Cases
+
+* The power supply must fit in the PC case 
+	- For simplification, ATX and SFX PSUs will be compatible 
+		with ATX or Micro ATX cases, but only SFX PSUs will be
+		compatible with all cases
+* The CPU and GPU will have the highest score value weight coefficient
+	of 25% each
+* The Motherboard will have a 20% weight coefficient
+* The RAM and PSU will each have a 15% weight coefficient
+* The Case will have a 10% weight coefficient
+
+### Budget Reduction Rules ###
+* Set score to 0 if 2x over budget
+* Reduce score by 80% if 1.8x over budget
+* Reduce score by 60% if 1.6x over budget
+* Reduce score by 40% if 1.4x over budget
+* Reduce score by 20% if 1.2x over budget
