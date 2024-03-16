@@ -51,6 +51,7 @@
             rb120 = new RadioButton();
             rb60 = new RadioButton();
             rb30 = new RadioButton();
+            TestButton = new Button();
             ((System.ComponentModel.ISupportInitialize)TBBudget).BeginInit();
             BrandGroupBox.SuspendLayout();
             grbResolution.SuspendLayout();
@@ -63,7 +64,7 @@
             LblBudget.Location = new Point(29, 24);
             LblBudget.Margin = new Padding(2, 0, 2, 0);
             LblBudget.Name = "LblBudget";
-            LblBudget.Size = new Size(64, 20);
+            LblBudget.Size = new Size(51, 15);
             LblBudget.TabIndex = 0;
             LblBudget.Text = "Budget:";
             // 
@@ -73,7 +74,7 @@
             TBBudget.Margin = new Padding(2);
             TBBudget.Maximum = 13;
             TBBudget.Name = "TBBudget";
-            TBBudget.Size = new Size(657, 56);
+            TBBudget.Size = new Size(657, 45);
             TBBudget.TabIndex = 1;
             TBBudget.Scroll += TBBudget_Scroll;
             // 
@@ -83,7 +84,7 @@
             Lbl5000.Location = new Point(595, 95);
             Lbl5000.Margin = new Padding(2, 0, 2, 0);
             Lbl5000.Name = "Lbl5000";
-            Lbl5000.Size = new Size(54, 20);
+            Lbl5000.Size = new Size(42, 15);
             Lbl5000.TabIndex = 2;
             Lbl5000.Text = "$2800";
             Lbl5000.UseMnemonic = false;
@@ -94,7 +95,7 @@
             Lbl1000.Location = new Point(29, 94);
             Lbl1000.Margin = new Padding(2, 0, 2, 0);
             Lbl1000.Name = "Lbl1000";
-            Lbl1000.Size = new Size(45, 20);
+            Lbl1000.Size = new Size(35, 15);
             Lbl1000.TabIndex = 3;
             Lbl1000.Text = "$400";
             // 
@@ -104,7 +105,7 @@
             Lbl1500.Location = new Point(123, 95);
             Lbl1500.Margin = new Padding(2, 0, 2, 0);
             Lbl1500.Name = "Lbl1500";
-            Lbl1500.Size = new Size(45, 20);
+            Lbl1500.Size = new Size(35, 15);
             Lbl1500.TabIndex = 4;
             Lbl1500.Text = "$800";
             // 
@@ -114,7 +115,7 @@
             Lbl2000.Location = new Point(219, 95);
             Lbl2000.Margin = new Padding(2, 0, 2, 0);
             Lbl2000.Name = "Lbl2000";
-            Lbl2000.Size = new Size(54, 20);
+            Lbl2000.Size = new Size(42, 15);
             Lbl2000.TabIndex = 5;
             Lbl2000.Text = "$1200";
             // 
@@ -124,7 +125,7 @@
             Lbl3000.Location = new Point(302, 94);
             Lbl3000.Margin = new Padding(2, 0, 2, 0);
             Lbl3000.Name = "Lbl3000";
-            Lbl3000.Size = new Size(54, 20);
+            Lbl3000.Size = new Size(42, 15);
             Lbl3000.TabIndex = 7;
             Lbl3000.Text = "$1600";
             // 
@@ -134,7 +135,7 @@
             Lbl3500.Location = new Point(406, 95);
             Lbl3500.Margin = new Padding(2, 0, 2, 0);
             Lbl3500.Name = "Lbl3500";
-            Lbl3500.Size = new Size(54, 20);
+            Lbl3500.Size = new Size(42, 15);
             Lbl3500.TabIndex = 8;
             Lbl3500.Text = "$2000";
             // 
@@ -144,7 +145,7 @@
             Lbl4500.Location = new Point(494, 95);
             Lbl4500.Margin = new Padding(2, 0, 2, 0);
             Lbl4500.Name = "Lbl4500";
-            Lbl4500.Size = new Size(54, 20);
+            Lbl4500.Size = new Size(42, 15);
             Lbl4500.TabIndex = 10;
             Lbl4500.Text = "$2400";
             // 
@@ -154,7 +155,7 @@
             LblBudgetSelection.Location = new Point(82, 24);
             LblBudgetSelection.Margin = new Padding(2, 0, 2, 0);
             LblBudgetSelection.Name = "LblBudgetSelection";
-            LblBudgetSelection.Size = new Size(0, 20);
+            LblBudgetSelection.Size = new Size(0, 15);
             LblBudgetSelection.TabIndex = 11;
             // 
             // BrandGroupBox
@@ -177,7 +178,7 @@
             IntelRadioButton.Location = new Point(533, 39);
             IntelRadioButton.Margin = new Padding(2);
             IntelRadioButton.Name = "IntelRadioButton";
-            IntelRadioButton.Size = new Size(62, 24);
+            IntelRadioButton.Size = new Size(51, 19);
             IntelRadioButton.TabIndex = 2;
             IntelRadioButton.Text = "Intel";
             IntelRadioButton.UseVisualStyleBackColor = true;
@@ -189,7 +190,7 @@
             NvidiaRadioButton.Location = new Point(295, 39);
             NvidiaRadioButton.Margin = new Padding(2);
             NvidiaRadioButton.Name = "NvidiaRadioButton";
-            NvidiaRadioButton.Size = new Size(84, 24);
+            NvidiaRadioButton.Size = new Size(67, 19);
             NvidiaRadioButton.TabIndex = 1;
             NvidiaRadioButton.TabStop = true;
             NvidiaRadioButton.Text = "NVIDIA";
@@ -201,7 +202,7 @@
             AMDRadioButton.Location = new Point(88, 39);
             AMDRadioButton.Margin = new Padding(2);
             AMDRadioButton.Name = "AMDRadioButton";
-            AMDRadioButton.Size = new Size(66, 24);
+            AMDRadioButton.Size = new Size(53, 19);
             AMDRadioButton.TabIndex = 0;
             AMDRadioButton.Text = "AMD";
             AMDRadioButton.UseVisualStyleBackColor = true;
@@ -235,7 +236,7 @@
             rb2160.AutoSize = true;
             rb2160.Location = new Point(533, 37);
             rb2160.Name = "rb2160";
-            rb2160.Size = new Size(66, 24);
+            rb2160.Size = new Size(53, 19);
             rb2160.TabIndex = 2;
             rb2160.Text = "2160";
             rb2160.UseVisualStyleBackColor = true;
@@ -245,7 +246,7 @@
             rb1440.AutoSize = true;
             rb1440.Location = new Point(295, 37);
             rb1440.Name = "rb1440";
-            rb1440.Size = new Size(66, 24);
+            rb1440.Size = new Size(53, 19);
             rb1440.TabIndex = 1;
             rb1440.TabStop = true;
             rb1440.Text = "1440";
@@ -257,7 +258,7 @@
             rb1080.Checked = true;
             rb1080.Location = new Point(88, 37);
             rb1080.Name = "rb1080";
-            rb1080.Size = new Size(66, 24);
+            rb1080.Size = new Size(53, 19);
             rb1080.TabIndex = 0;
             rb1080.TabStop = true;
             rb1080.Text = "1080";
@@ -280,7 +281,7 @@
             rb120.AutoSize = true;
             rb120.Location = new Point(533, 40);
             rb120.Name = "rb120";
-            rb120.Size = new Size(57, 24);
+            rb120.Size = new Size(46, 19);
             rb120.TabIndex = 5;
             rb120.TabStop = true;
             rb120.Text = "120";
@@ -293,7 +294,7 @@
             rb60.Checked = true;
             rb60.Location = new Point(295, 40);
             rb60.Name = "rb60";
-            rb60.Size = new Size(48, 24);
+            rb60.Size = new Size(39, 19);
             rb60.TabIndex = 4;
             rb60.TabStop = true;
             rb60.Text = "60";
@@ -304,17 +305,28 @@
             rb30.AutoSize = true;
             rb30.Location = new Point(88, 40);
             rb30.Name = "rb30";
-            rb30.Size = new Size(48, 24);
+            rb30.Size = new Size(39, 19);
             rb30.TabIndex = 3;
             rb30.TabStop = true;
             rb30.Text = "30";
             rb30.UseVisualStyleBackColor = true;
             // 
+            // TestButton
+            // 
+            TestButton.Location = new Point(82, 458);
+            TestButton.Name = "TestButton";
+            TestButton.Size = new Size(103, 23);
+            TestButton.TabIndex = 29;
+            TestButton.Text = "Test Button";
+            TestButton.UseVisualStyleBackColor = true;
+            TestButton.Click += TestButton_Click;
+            // 
             // SelectionForm2
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 506);
+            Controls.Add(TestButton);
             Controls.Add(grbFPS);
             Controls.Add(grbResolution);
             Controls.Add(BtnRecommend);
@@ -370,5 +382,6 @@
         private RadioButton rb120;
         private RadioButton rb60;
         private RadioButton rb30;
+        private Button TestButton;
     }
 }
