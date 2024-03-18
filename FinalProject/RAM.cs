@@ -19,7 +19,7 @@ namespace FinalProject
         private int totalGB;
         private int moduleCount;
         private double pricePerGB;
-        private string color;
+        private string ramColor;
         private int casLatency;
         private string ramType;
 
@@ -44,10 +44,10 @@ namespace FinalProject
             get { return pricePerGB; }
             set { pricePerGB = value; }
         }
-        public string Color
+        public string RAM_Color
         {
-            get { return color; }
-            set { color = value; }
+            get { return ramColor; }
+            set { ramColor = value; }
         }
 
         public int CAS_Latency
@@ -76,7 +76,7 @@ namespace FinalProject
                 $"Total GB: {TotalGB}\n" +
                 $"CAS Latency: {CAS_Latency}\n" +
                 $"RAM Type: {RAM_Type}\n" +
-                $"Color: {Color}\n" +
+                $"Color: {RAM_Color}\n" +
                 $"Module Count: {ModuleCount}\n" +
                 ShowDatabaseLink() + $"{DatabaseLink}\n" +
                 ShowMarketLink() + $"{MarketLink}";
@@ -104,7 +104,7 @@ namespace FinalProject
             TotalGB = 0;
             ModuleCount = 0;
             PricePerGB = 0.0;
-            Color = string.Empty;
+            RAM_Color = string.Empty;
             CAS_Latency = 0;
             RAM_Type = string.Empty;
         }
@@ -118,16 +118,16 @@ namespace FinalProject
             TotalGB = totalGB;
             ModuleCount = moduleCount;
             PricePerGB = pricePerGB;
-            Color = color;
+            RAM_Color = color;
             CAS_Latency = casLatency;
             RAM_Type = ramType;
         }
 
         public int CompareTo(Object other)
         {
-            // Used to sort the array in descending order from best performance to worst
+            // Used to sort the array in descending order from lowest CAS Latency to highest
             RAM otherRAM = (RAM)other;
-            return (otherRAM.PricePerGB.CompareTo(this.PricePerGB));
+            return (this.CAS_Latency.CompareTo(otherRAM.CAS_Latency));
         }
 
         public override string ToString()
