@@ -43,36 +43,16 @@ namespace FinalProject
             set { maxGPU_Length = value; }
         }
 
-        // Generates the RAM's product hyperlink hosted on PCPartPicker.com (may not be implemented)
-        public override void SetMarketLink(string mktCode)
-        {
-            string link = $"https://pcpartpicker.com/product/{mktCode}";
-            MarketLink = link;
-        }
 
-        // Returns a string showing the core/thread count, benchmark data, and relevant URLs for the CPU
+        // Returns a string showing the relevant data for the PC case
         public override string GetStats()
         {
             string perfInfo =
                 $"Form Factor: {FormFactor}\n" +
                 $"Color: {CaseColor}\n" +
                 $"Side Panel: {SidePanel}\n" +
-                $"Max GPU Length: {MaxGPU_Length} mm\n" +
-                ShowDatabaseLink() + $"{DatabaseLink}\n" +
-                ShowMarketLink() + $"{MarketLink}";
+                $"Max GPU Length: {MaxGPU_Length} mm\n";
             return perfInfo;
-        }
-
-        // Generates the Cases's hyperlink in the Case Database hosted on TechPowerUp.com 
-        public override void SetDatabaseLink(string dbCode)
-        {
-            // Replace the spaces in the GPU model with '-' and force it to be lowercase 
-            string caseModel = this.Model.ToLower().Replace(" ", "-");
-
-            // Generate the TechPowerUp link with the provided code
-            string link = $"https://www.techpowerup.com/cpu-specs/{caseModel}.{dbCode}";
-
-            DatabaseLink = link;
         }
 
         public Case()
