@@ -51,7 +51,6 @@
             rb120 = new RadioButton();
             rb60 = new RadioButton();
             rb30 = new RadioButton();
-            TestButton = new Button();
             ((System.ComponentModel.ISupportInitialize)TBBudget).BeginInit();
             BrandGroupBox.SuspendLayout();
             grbResolution.SuspendLayout();
@@ -311,22 +310,11 @@
             rb30.Text = "30";
             rb30.UseVisualStyleBackColor = true;
             // 
-            // TestButton
-            // 
-            TestButton.Location = new Point(82, 458);
-            TestButton.Name = "TestButton";
-            TestButton.Size = new Size(103, 23);
-            TestButton.TabIndex = 29;
-            TestButton.Text = "Test Button";
-            TestButton.UseVisualStyleBackColor = true;
-            TestButton.Click += TestButton_Click;
-            // 
             // SelectionForm2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 506);
-            Controls.Add(TestButton);
             Controls.Add(grbFPS);
             Controls.Add(grbResolution);
             Controls.Add(BtnRecommend);
@@ -382,6 +370,5 @@
         private RadioButton rb120;
         private RadioButton rb60;
         private RadioButton rb30;
-        private Button TestButton;
     }
 }

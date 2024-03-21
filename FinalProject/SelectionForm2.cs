@@ -181,52 +181,5 @@ namespace FinalProject
             SaveSelectionData();
 
         }
-
-        // ***** THIS METHOD IS FOR TESTING ONLY - TESTING OF THE CUSTOMER QUEUE *****
-        private void TestButton_Click(object sender, EventArgs e)
-        {
-            Customer nextPriorityCustomer1, nextPriorityCustomer2, nextPriorityCustomer3, 
-                     nextPriorityCustomer4, nextPriorityCustomer5, nextPriorityCustomer6, 
-                     nextPriorityCustomer7;
-            CustomerDatabase globalCustomerDatabase = new CustomerDatabase();
-
-            // Add two more customers (in additon to the five already created)
-            globalCustomerDatabase.AddCustomer(8000.33, "Haley Smith", "New Mexico");
-            globalCustomerDatabase.AddCustomer(122, "Greg Johns", "North Dakota");
-
-            // Pop all seven customers from the queue
-            nextPriorityCustomer1 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer2 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer3 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer4 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer5 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer6 = globalCustomerDatabase.ReturnCustomer();
-            nextPriorityCustomer7 = globalCustomerDatabase.ReturnCustomer();
-
-            // Create a string to show the data on the pop-up box
-            string theText = "Customer " + nextPriorityCustomer1.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer1.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer1.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer2.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer2.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer2.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer3.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer3.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer3.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer4.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer4.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer4.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer5.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer5.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer5.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer6.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer6.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer6.CustomerName + "\n";
-            theText += "Customer " + nextPriorityCustomer7.CustomerNumber.ToString() +
-                " - Priority = " + nextPriorityCustomer7.LoyaltyLevel.ToString() +
-                " - Name = " + nextPriorityCustomer7.CustomerName + "\n";
-            // Show the message
-            MessageBox.Show(theText);
-        }
     }
 }
