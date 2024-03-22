@@ -15,13 +15,12 @@ using Newtonsoft.Json;
 
 namespace FinalProject
 {
-   
+
     public partial class SelectionForm2 : Form
     {
         public SelectionForm2()
         {
             InitializeComponent();
-
         }
 
         //Change label to show value of track bar selection in dollar amount
@@ -103,7 +102,7 @@ namespace FinalProject
             };
         }
 
-        
+
         //Return selected value from the Resolution Group Box as an integer
         public int GetResolutionValue()
         {
