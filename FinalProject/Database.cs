@@ -4,6 +4,8 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using OfficeOpenXml;
 
 namespace FinalProject
 {
@@ -17,51 +19,61 @@ namespace FinalProject
          *  Pricing data was harvested from lowest market listing on PCPartPicker.com (last checked Dec 1, 2023)
          */
         private List<GPU> gpuList = new List<GPU>();
-
         private List<CPU> cpuList = new List<CPU>();
-
+        private List<Motherboard> moboList = new List<Motherboard>();
+        private List<RAM> ramList = new List<RAM>();
+        private List<PSU> psuList = new List<PSU>();
+        private List<Case> caseList = new List<Case>();
+        private List<SSD> ssdList = new List<SSD>();
+        private static string filePath = "References\\PC-Part-Database.xlsx";
+        private FileInfo file = new FileInfo(filePath);
+        private string spreadsheetName;
+        private ExcelWorksheet workSheet;
         public Database()
         {
-            // Create the internal GPU List that can be searched through in the other forms
-            gpuList = new List<GPU>
+            // Load the Excel File
+            using (ExcelPackage package = new ExcelPackage(filePath))
             {
-                // NVIDIA GPUs (Ada Lovelace, Ampere & Turing generations)
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4090", Price = 1599.99, Perf1080p = 243, Perf1440p = 209, Perf2160p = 133, DatabaseCode = "c3889", MarketCode = "539" },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4080", Price = 1199.99, Perf1080p = 214, Perf1440p = 171, Perf2160p = 103, DatabaseCode = "c3888", MarketCode = "542"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070 Ti", Price = 729.99, Perf1080p = 187, Perf1440p = 141, Perf2160p = 82, DatabaseCode = "c3950", MarketCode = "549"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4070", Price = 539.99, Perf1080p = 153, Perf1440p = 115, Perf2160p = 67, DatabaseCode = "c3924", MarketCode = "550"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4060 Ti", Price = 369.99, Perf1080p = 120, Perf1440p = 88, Perf2160p = 49, DatabaseCode = "c3890", MarketCode = "553"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 4060", Price = 299.99, Perf1080p = 96, Perf1440p = 70, Perf2160p = 39, DatabaseCode = "c4107", MarketCode = "552"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3090", Price = 1356.12, Perf1080p = 167, Perf1440p = 129, Perf2160p = 80, DatabaseCode = "c3622", MarketCode = "493"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3070 Ti", Price = 499.99, Perf1080p = 128, Perf1440p = 97, Perf2160p = 58, DatabaseCode = "c3675", MarketCode = "506"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3070", Price = 399.99, Perf1080p = 121, Perf1440p = 90, Perf2160p = 54, DatabaseCode = "c3674", MarketCode = "494,508"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3060 Ti", Price = 329.99, Perf1080p = 106, Perf1440p = 80, Perf2160p = 47, DatabaseCode = "c3681", MarketCode = "497,513"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3060", Price = 289.99, Perf1080p = 81, Perf1440p = 60, Perf2160p = 35, DatabaseCode = "c3682", MarketCode = "499"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 3050", Price = 219.99, Perf1080p = 59, Perf1440p = 43, Perf2160p = 25, DatabaseCode = "c3858", MarketCode = "518"  },
-                new GPU{ Brand = "NVIDIA", Model = "Geforce RTX 2060", Price = 189.99, Perf1080p = 66, Perf1440p = 48, Perf2160p = 26, DatabaseCode = "c3310", MarketCode = "436"  },
-               
-                // AMD GPUs (Navi 3 & Navi 2 generations)
-                new GPU{ Brand = "AMD", Model = "Radeon RX 7900 XTX", Price = 919.99, Perf1080p = 213, Perf1440p = 174, Perf2160p = 108, DatabaseCode = "c3941", MarketCode = "548"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 7900 XT", Price = 739.99, Perf1080p = 193, Perf1440p = 152, Perf2160p = 90, DatabaseCode = "c3912", MarketCode = "547"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 7800 XT", Price = 499.99, Perf1080p = 157, Perf1440p = 119, Perf2160p = 70, DatabaseCode = "c3839", MarketCode = "559"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 7700 XT", Price = 429.99, Perf1080p = 132, Perf1440p = 101, Perf2160p = 59, DatabaseCode = "c3911", MarketCode = "558"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 7600", Price = 249.99, Perf1080p = 94, Perf1440p = 68, Perf2160p = 35, DatabaseCode = "c4153", MarketCode = "554"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6900 XT", Price = 699.99, Perf1080p = 162, Perf1440p = 124, Perf2160p = 73, DatabaseCode = "c3481", MarketCode = "498"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6800 XT", Price = 449.99, Perf1080p = 153, Perf1440p = 117, Perf2160p = 68, DatabaseCode = "c3694", MarketCode = "496"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6800", Price = 389.99, Perf1080p = 132, Perf1440p = 101, Perf2160p = 59, DatabaseCode = "c3713", MarketCode = "495"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6700 XT", Price = 299.99, Perf1080p = 110, Perf1440p = 82, Perf2160p = 46, DatabaseCode = "c3695", MarketCode = "501"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6600", Price = 189.99, Perf1080p = 77, Perf1440p = 54, Perf2160p = 27, DatabaseCode = "c3696", MarketCode = "511"  },
-                new GPU{ Brand = "AMD", Model = "Radeon RX 6500 XT", Price = 139.99, Perf1080p = 35, Perf1440p = 23, Perf2160p = 11, DatabaseCode = "c3850", MarketCode = "517"  },
-                
-                // Intel GPUs (Alchemist generation)
-                new GPU{ Brand = "Intel", Model = "Arc A770", Price = 199.99, Perf1080p = 92, Perf1440p = 71, Perf2160p = 42, DatabaseCode = "c3914", MarketCode = "540"  },
-                new GPU{ Brand = "Intel", Model = "Arc A750", Price = 169.99, Perf1080p = 82, Perf1440p = 63, Perf2160p = 36, DatabaseCode = "c3929", MarketCode = "541"  },
-                new GPU{ Brand = "Intel", Model = "Arc A580", Price = 159.99, Perf1080p = 74, Perf1440p = 56, Perf2160p = 32, DatabaseCode = "c3928", MarketCode = "561"  },
-                new GPU{ Brand = "Intel", Model = "Arc A380", Price = 99.99, Perf1080p = 38, Perf1440p = 28, Perf2160p = 15, DatabaseCode = "c3913", MarketCode = "538"  }
+                /* Create the internal GPU List that can be searched through in the other forms
+                 * GPU Spreadsheet Row Order: 
+                 *      - Brand, Model, Chipset, Price, VRAM, Length, 
+                 *        Perf1080p, Perf1440p, Perf2160p, SupportCUDA, SupportAV1, 
+                 *        TDP, RecPSU, DatabaseCode, MarketCode
+                 */
+                spreadsheetName = "GPU";
+                workSheet = package.Workbook.Worksheets[spreadsheetName];
+                int rows = workSheet.Dimension.Rows;
 
-            };
+                for (int i = 0; i < rows; i++)
+                {
+                    // Grab the data from the spreadsheet and assign it to local variables
+                    string brand = Convert.ToString(workSheet.Cells[i, 1].Value);
+                    string model = Convert.ToString(workSheet.Cells[i, 2].Value);
+                    string chipset = Convert.ToString(workSheet.Cells[i, 3].Value);
+                    double price = Convert.ToDouble(workSheet.Cells[i, 4].Value);
+                    int vram = Convert.ToInt16(workSheet.Cells[i, 5].Value);
+                    int length = Convert.ToInt16(workSheet.Cells[i, 6].Value);
+                    int perf1080p = Convert.ToInt16(workSheet.Cells[i, 7].Value);
+                    int perf1440p = Convert.ToInt16(workSheet.Cells[i, 8].Value);
+                    int perf2160p = Convert.ToInt16(workSheet.Cells[i, 9].Value);
+                    bool supportAV1 = Convert.ToBoolean(workSheet.Cells[i, 10].Value);
+                    bool supportCUDA = Convert.ToBoolean(workSheet.Cells[i, 11].Value);
+                    int tdp = Convert.ToInt16(workSheet.Cells[i, 12].Value);
+                    int recPSU = Convert.ToInt16(workSheet.Cells[i, 13].Value);
+                    string dbCode = Convert.ToString(workSheet.Cells[i, 14].Value);
+                    string mktCode = Convert.ToString(workSheet.Cells[i, 15].Value);
 
-            
+                    // Create and add the new GPU object to the list
+                    GPU gpu = new GPU(brand, model, chipset, price, 
+                        vram, length, perf1080p, perf1440p, perf2160p,
+                        supportAV1, supportCUDA, tdp, recPSU, dbCode, mktCode);
+                    gpuList.Add(gpu);
+
+                    
+                }
+            }
+
+
             // Create the internal CPU List that can be searched through in other forms
             cpuList = new List<CPU>
             {

@@ -13,6 +13,10 @@ namespace FinalProject
 {
     public abstract class ComputerPart
     {
+        /*
+         * TODO: Modify to have Brand field exclusive to Processor class
+         *       Model will be the referred "Name" in the other sheets
+         */
         private string brand;
         private string model;
         private double price;
