@@ -62,14 +62,7 @@ namespace FinalProject
             set { ramType = value; }
         }
 
-        // Generates the RAM's product hyperlink hosted on PCPartPicker.com (may not be implemented)
-        public override void SetMarketLink(string mktCode)
-        {
-            string link = $"https://pcpartpicker.com/product/{mktCode}";
-            MarketLink = link;
-        }
-
-        // Returns a string showing the core/thread count, benchmark data, and relevant URLs for the CPU
+        // Returns a string showing the relevant data for the RAM
         public override string GetStats()
         {
             string perfInfo =
@@ -77,22 +70,8 @@ namespace FinalProject
                 $"CAS Latency: {CAS_Latency}\n" +
                 $"RAM Type: {RAM_Type}\n" +
                 $"Color: {RAM_Color}\n" +
-                $"Module Count: {ModuleCount}\n" +
-                ShowDatabaseLink() + $"{DatabaseLink}\n" +
-                ShowMarketLink() + $"{MarketLink}";
+                $"Module Count: {ModuleCount}\n";
             return perfInfo;
-        }
-
-        // Generates the RAM's hyperlink in the RAM Database hosted on TechPowerUp.com 
-        public override void SetDatabaseLink(string dbCode)
-        {
-            // Replace the spaces in the GPU model with '-' and force it to be lowercase 
-            string moboModel = this.Model.ToLower().Replace(" ", "-");
-
-            // Generate the TechPowerUp link with the provided code
-            string link = $"https://www.techpowerup.com/cpu-specs/{moboModel}.{dbCode}";
-
-            DatabaseLink = link;
         }
 
         public RAM()

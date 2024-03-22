@@ -12,12 +12,16 @@ using FinalProject;
 
 namespace FinalProject
 {
-    public class CPU : ComputerPart, IComparable
+    public class CPU : Processor, IComparable
     {
         private int cores;
         private int threads;
         private int perf1080p;
-        
+        private int perfGeomean;
+        private string socket;
+        private int tdp;
+        private bool ocSupport;
+
         public int Cores
         {
             get { return cores; }
@@ -35,6 +39,30 @@ namespace FinalProject
             get { return perf1080p; }
             set { perf1080p = value; }
         }
+
+        public int PerfGeomean
+        {
+            get { return perfGeomean; }
+            set { perfGeomean = value; }
+        }
+
+        public string Socket
+        {
+            get { return socket; }
+            set { socket = value; }
+        }
+        public int TDP
+        {
+            get { return tdp; }
+            set { tdp = value; }
+        }
+
+        public bool OC_Support
+        {
+            get { return ocSupport; }
+            set { ocSupport = value; }
+        }
+
 
         // Generates the CPU's product hyperlink hosted on PCPartPicker.com
         public override void SetMarketLink(string mktCode)
@@ -61,7 +89,11 @@ namespace FinalProject
             string perfInfo = 
                 $"Cores: {Cores}\n" + 
                 $"Threads: {Threads}\n" +
-                $"Avg. 1080p Performance {Perf1080p} FPS\n" +
+                $"Socket: {Socket}\n" + 
+                $"Avg. 1080p Performance: {Perf1080p} FPS\n" +
+                $"Geomean Performance: {PerfGeomean}\n" + 
+                $"TDP: {TDP} Watts\n" +
+                $"OC Support: {OC_Support}\n" +
                 ShowDatabaseLink() + $"{DatabaseLink}\n" +
                 ShowMarketLink() + $"{MarketLink}";
             return perfInfo;
@@ -75,11 +107,16 @@ namespace FinalProject
             Threads = 0;
             Price = 0;
             Perf1080p = 0;
+            PerfGeomean = 0;
+            Socket = string.Empty;
+            TDP = 0;
+            OC_Support = false;
             DatabaseCode = string.Empty;
             MarketCode = string.Empty;
         }
 
-        public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, string dbCode, string mktCode)
+        public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, 
+            int perfGeomean, int tdp, string socket, bool ocSupport, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;
@@ -87,6 +124,10 @@ namespace FinalProject
             Cores = cores;
             Threads = threads;
             Perf1080p = perf1080p;
+            PerfGeomean= perfGeomean;
+            TDP = tdp;
+            Socket = socket;
+            OC_Support = ocSupport;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
         }

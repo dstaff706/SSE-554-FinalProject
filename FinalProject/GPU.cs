@@ -6,15 +6,52 @@ using HtmlAgilityPack;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 using System.Text.RegularExpressions;
 using FinalProject;
+using System.Runtime.CompilerServices;
 
 namespace FinalProject
 {
-    public class GPU : ComputerPart
-    { 
+    public class GPU : Processor
+    {
         private int perf1080p;
         private int perf1440p;
         private int perf2160p;
+        private int vram;
+        private int length;
+        private int tdp;
+        private int recPSU;
+        private bool av1Support;
+        private bool cudaSupport;
 
+        public int VRAM
+        {
+            get { return vram; }
+            set { vram = value; }
+        }
+        public int Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+        public int TDP
+        {
+            get { return tdp; }
+            set { tdp = value; }
+        }
+        public int RecPSU
+        {
+            get { return recPSU;}
+            set { recPSU = value; }
+        }
+        public bool SupportAV1
+        {
+            get { return av1Support; }
+            set { av1Support = value; }
+        }
+        public bool SupportCUDA
+        {
+            get { return cudaSupport; }
+            set { cudaSupport = value; }
+        }
         public int Perf1080p
         {
             get { return perf1080p; }
@@ -31,25 +68,40 @@ namespace FinalProject
             set { perf2160p = value; }
         }
 
+
         public GPU()
         {
             Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
-            Perf1080p = 0; 
+            VRAM = 0;
+            Length = 0;
+            TDP = 0;
+            RecPSU = 0;
+            Perf1080p = 0;
             Perf1440p = 0;
             Perf2160p = 0;
-			MarketCode = string.Empty;
-			DatabaseCode = string.Empty;
+            SupportAV1 = false;
+            SupportCUDA = false;
+            MarketCode = string.Empty;
+            DatabaseCode = string.Empty;
         }
-        public GPU(string brand, string model, double price, int perf1080p, int perf1440p, int perf2160p, string dbCode, string mktCode)
+        
+        public GPU(string brand, string model, double price, int vram, int length, int tdp, int recPSU, 
+            int perf1080p, int perf1440p, int perf2160p, bool av1Support, bool cudaSupport, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;
             Price = price;
+            VRAM = vram; 
+            Length = length; 
+            TDP = tdp;
+            RecPSU = recPSU;
             Perf1080p = perf1080p;
             Perf1440p = perf1440p;
             Perf2160p = perf2160p;
+            SupportAV1 = av1Support;
+            SupportCUDA = cudaSupport;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
         }
@@ -76,9 +128,15 @@ namespace FinalProject
         public override string GetStats()
         {
             string perfInfo = 
+                $"VRAM: {VRAM} GB\n" +
                 $"Avg. 1080p Performance {Perf1080p} FPS\n" +
                 $"Avg. 1440p Performance: {Perf1440p} FPS\n" +
                 $"Avg. 2160p Performnce: {Perf2160p} FPS\n" +
+                $"Length: {Length} mm\n" + 
+                $"TDP: {TDP} Watts\n" + 
+                $"Recommended PSU: {RecPSU} Watts\n" +
+                $"AV1 Support: {SupportAV1}\n" + 
+                $"CUDA Support: {SupportCUDA}\n" +
                 ShowDatabaseLink() + $"{DatabaseLink}\n" +
                 ShowMarketLink() + $"{MarketLink}";
             return perfInfo;
