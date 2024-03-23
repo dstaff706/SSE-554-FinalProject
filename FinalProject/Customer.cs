@@ -57,8 +57,8 @@
         {
             TotalAmountSpent = 0.00;
             CustomerNumber = -1;
-            CustomerName = "N/A";
-            CustomerLocation = "N/A";
+            CustomerName = "Anonymous";
+            CustomerLocation = "UNKNOWN";
         }
 
         // Customer Constructor
@@ -68,6 +68,52 @@
             CustomerNumber = number;
             CustomerName = name;
             CustomerLocation = location;
+        }
+
+        // Method to add the new purchase to this customers total purchases
+        // at this website. The result of this addtion may upgrade the customer's
+        // Loyalty Level
+        public void AddNewPurchase(double price) 
+        {
+            // Add total of recent purchase to customers overall total spent at company
+            // in the past. This will trigger an update to the "Loyalty Level" if 
+            // nedded
+            TotalAmountSpent += price;
+
+        }
+
+        // This method will return the final price the customer has to pay for this purchase.
+        // Shipping Fees and Service Fees are applied. Discounts, based on customer loyalty
+        // level are applied to reduce the amount
+        public double ApplyFeesAndDiscounts(double price)
+        {
+            // Shipping is 3%
+            const double SHIPPING = 0.03;
+            // Sevice Fee is 20%
+            const double SERVICE_FEE = 0.20;
+            // Loyalty discount: Platnum = -15%, Gold = -10%, Silver = -5%
+            double loyaltyDiscount;
+            // Final percentage to add to the total purchase price
+            double finalUpcharge;
+
+            switch (this.LoyaltyLevel)
+            {
+                case Customer_Loyalty_Level.PLATINUM:
+                    loyaltyDiscount = 0.15;
+                    break;
+                case Customer_Loyalty_Level.GOLD:
+                    loyaltyDiscount = 0.10;
+                    break;
+                case Customer_Loyalty_Level.SILVER:
+                    loyaltyDiscount = 0.05;
+                    break;
+                default:
+                    loyaltyDiscount = 0.00;
+                    break;
+            }
+
+            finalUpcharge = ((price)*(SERVICE_FEE - loyaltyDiscount)) + (price * SHIPPING);
+            return (price + finalUpcharge);
         }
     }
 
