@@ -94,8 +94,9 @@ namespace FinalProject
             DatabaseCode = string.Empty;
         }
         
-        public GPU(string brand, string model, string chipset, double price, int vram, int length, int tdp, int recPSU, 
-            int perf1080p, int perf1440p, int perf2160p, bool av1Support, bool cudaSupport, string dbCode, string mktCode)
+        public GPU(string brand, string model, string chipset, double price, 
+            int vram, int length, int perf1080p, int perf1440p, int perf2160p, 
+            bool av1Support, bool cudaSupport, int tdp, int recPSU, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;

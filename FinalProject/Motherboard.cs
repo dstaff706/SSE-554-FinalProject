@@ -80,7 +80,6 @@ namespace FinalProject
 
         public Motherboard()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             Socket = string.Empty;
@@ -92,9 +91,8 @@ namespace FinalProject
             OC_Support = false;
         }
 
-        public Motherboard(string brand, string model, double price, string socket, string chiset, string formFactor, string ramType, int ramSlots, int maxRAM, bool ocSupport)
+        public Motherboard(string model, double price, string socket, string chiset, string formFactor, string ramType, int ramSlots, int maxRAM, bool ocSupport)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             Socket = socket;

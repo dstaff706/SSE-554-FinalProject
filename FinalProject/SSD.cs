@@ -55,7 +55,6 @@ namespace FinalProject
 
         public SSD()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             M2Interface = 0.0;
@@ -64,9 +63,8 @@ namespace FinalProject
             MaxWrite = 0;
         }
 
-        public SSD(string brand, string model, double price, double m2Interface, int storageCapacity, int maxRead, int maxWrite)
+        public SSD(string model, double price, double m2Interface, int storageCapacity, int maxRead, int maxWrite)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             M2Interface = m2Interface;
