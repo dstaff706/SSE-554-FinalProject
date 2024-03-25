@@ -15,21 +15,21 @@ namespace FinalProject
 {
     public class SSD : ComputerPart, IComparable
     {
-        private double m2Interface;
         private int storageCapacity;
+        private double pricePerGB;
         private int maxRead;
         private int maxWrite;
-
-        public double M2Interface
-        {
-            get { return m2Interface; }
-            set { m2Interface = value; }
-        }
+        private string m2Interface;
 
         public int StorageCapacity
         {
             get { return storageCapacity; }
             set { storageCapacity = value; }
+        }
+        public double PricePerGB
+        {
+            get { return pricePerGB; }
+            set { pricePerGB = value; }
         }
         public int MaxRead
         {
@@ -46,33 +46,38 @@ namespace FinalProject
         public override string GetStats()
         {
             string perfInfo =
-                $"M.2 Interface: PCIe {M2Interface} X4\n" +
+                $"NVMe Interface: {M2Interface}\n" +
                 $"Storage Capacity: {StorageCapacity} TB\n" +
                 $"Max Read: {MaxRead} MB/s\n" +
                 $"Max Write: {MaxWrite} MB/s\n";
             return perfInfo;
         }
+        public string M2Interface
+        {
+            get { return m2Interface; }
+            set { m2Interface = value; }
+        }
 
         public SSD()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
-            M2Interface = 0.0;
             StorageCapacity = 0;
+            PricePerGB = 0;
             MaxRead = 0;
             MaxWrite = 0;
+            M2Interface = string.Empty;
         }
 
-        public SSD(string brand, string model, double price, double m2Interface, int storageCapacity, int maxRead, int maxWrite)
+        public SSD(string model, double price, int storageCapacity, double pricePerGB, int maxRead, int maxWrite, string m2Interface)
         {
-            Brand = brand;
             Model = model;
             Price = price;
-            M2Interface = m2Interface;
             StorageCapacity = storageCapacity;
+            PricePerGB = pricePerGB;
             MaxRead = maxRead;
             MaxWrite = maxWrite;
+            M2Interface = m2Interface;
         }
 
         public int CompareTo(Object other)

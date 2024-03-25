@@ -22,6 +22,7 @@ namespace FinalProject
         private int maxRAM;
         private int ramSlots;
         private bool ocSupport;
+        private string m2Interface;
 
         public string Socket
         {
@@ -63,6 +64,12 @@ namespace FinalProject
             set { ocSupport = value; }
         }
 
+        public string M2Interface
+        {
+            get { return m2Interface; }
+            set { m2Interface = value; }
+        }
+
         // Returns a string showing the relevant data for the Motherboard
         public override string GetStats()
         {
@@ -73,14 +80,14 @@ namespace FinalProject
                 $"RAM Type: {RAM_Type}\n" +
                 $"Max RAM: {MaxRAM}\n" +
                 $"RAM Slots {RAM_Slots}" +
-                $"OC Support: {OC_Support}\n";
+                $"OC Support: {OC_Support}\n" + 
+                $"NVMe SSD Support: {M2Interface}\n";
             return perfInfo;
         }
 
 
         public Motherboard()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             Socket = string.Empty;
@@ -90,11 +97,12 @@ namespace FinalProject
             RAM_Slots = 0;
             MaxRAM = 0;
             OC_Support = false;
+            M2Interface = string.Empty;
         }
 
-        public Motherboard(string brand, string model, double price, string socket, string chiset, string formFactor, string ramType, int ramSlots, int maxRAM, bool ocSupport)
+        public Motherboard(string model, double price, string socket, string chiset, string formFactor, 
+            string ramType, int ramSlots, int maxRAM, bool ocSupport, string m2Interface)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             Socket = socket;
@@ -104,6 +112,7 @@ namespace FinalProject
             RAM_Slots = ramSlots;
             MaxRAM = maxRAM;
             OC_Support = ocSupport;
+            M2Interface = m2Interface;
         }
 
         public int CompareTo(Object other)
