@@ -12,6 +12,7 @@ namespace FinalProject
 {
     public class GPU : Processor
     {
+        private string chipset;
         private int perf1080p;
         private int perf1440p;
         private int perf2160p;
@@ -22,6 +23,11 @@ namespace FinalProject
         private bool av1Support;
         private bool cudaSupport;
 
+        public string Chipset
+        {
+            get { return chipset; }
+            set { chipset = value; }
+        }
         public int VRAM
         {
             get { return vram; }
@@ -73,6 +79,7 @@ namespace FinalProject
         {
             Brand = string.Empty;
             Model = string.Empty;
+            Chipset = string.Empty;
             Price = 0;
             VRAM = 0;
             Length = 0;
@@ -87,11 +94,13 @@ namespace FinalProject
             DatabaseCode = string.Empty;
         }
         
-        public GPU(string brand, string model, double price, int vram, int length, int tdp, int recPSU, 
-            int perf1080p, int perf1440p, int perf2160p, bool av1Support, bool cudaSupport, string dbCode, string mktCode)
+        public GPU(string brand, string model, string chipset, double price, 
+            int vram, int length, int perf1080p, int perf1440p, int perf2160p, 
+            bool av1Support, bool cudaSupport, int tdp, int recPSU, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;
+            Chipset = chipset;
             Price = price;
             VRAM = vram; 
             Length = length; 
@@ -105,7 +114,7 @@ namespace FinalProject
             DatabaseCode = dbCode;
             MarketCode = mktCode;
         }
-
+        
         // Manually generates the GPU's Marktetplace URL hosted on PCPartPicker.com
         public override void SetMarketLink(string mktCode)
         {
@@ -141,11 +150,17 @@ namespace FinalProject
                 ShowMarketLink() + $"{MarketLink}";
             return perfInfo;
         }
-
+        public string GetGPUInfo()
+        {
+            string partInfo = $"{Brand} {Chipset}\n" +
+                $"Model: {Model}\n" +
+                $"Price: {Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))}\n";
+            return partInfo;
+        }
         public override string ToString()
         {
             string gpuLabel = "************ GPU **********\n";
-            string gpuData = gpuLabel + GetPartInfo() + GetStats();
+            string gpuData = gpuLabel + GetGPUInfo() + GetStats();
             return gpuData;
         }
     } // GPU class

@@ -15,12 +15,17 @@ namespace FinalProject
 {
     public abstract class Processor : ComputerPart
     {
-
+        private string brand;
         private string databaseCode;
         private string databaseLink;
         private string marketCode;
         private string marketLink;
 
+        public string Brand
+        {
+            get { return brand; }
+            set { brand = value; }
+        }
         public string DatabaseCode
         {
             get { return databaseCode; }

@@ -103,30 +103,30 @@ namespace FinalProject
         {
             Brand = string.Empty;
             Model = string.Empty;
+            Price = 0;
             Cores = 0;
             Threads = 0;
-            Price = 0;
-            Perf1080p = 0;
-            PerfGeomean = 0;
             Socket = string.Empty;
             TDP = 0;
+            Perf1080p = 0;
+            PerfGeomean = 0;
             OC_Support = false;
             DatabaseCode = string.Empty;
             MarketCode = string.Empty;
         }
 
-        public CPU(string brand, string model, int cores, int threads, double price, int perf1080p, 
-            int perfGeomean, int tdp, string socket, bool ocSupport, string dbCode, string mktCode)
+        public CPU(string brand, string model, double price, int cores, int threads, string socket, 
+            int tdp, int perf1080p, int perfGeomean, bool ocSupport, string dbCode, string mktCode)
         {
             Brand = brand;
             Model = model;
             Price = price;
             Cores = cores;
             Threads = threads;
+            Socket = socket;
+            TDP = tdp;
             Perf1080p = perf1080p;
             PerfGeomean= perfGeomean;
-            TDP = tdp;
-            Socket = socket;
             OC_Support = ocSupport;
             DatabaseCode = dbCode;
             MarketCode = mktCode;
