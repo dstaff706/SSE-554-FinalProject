@@ -1,0 +1,196 @@
+######
+CPUs
+######
+* AMD 5000 & 7000 generations only
+* Intel 12th, 13th, & 14th gen CPUs only
+
+#############
+NVIDIA GPUs
+#############
+* Last 2 NVIDIA Generations only (RTX 30 & 40 Series)
+	- RTX 2060 is exception
+* No RTX 3050s more than $250
+* No RTX 3060s more than $300
+* No RTX 3060 8GB models
+* No RTX 3060 Tis more than $400
+* No RTX 3070s more than $500
+* No RTX 3070 Tis more than $500
+* No RTX 3080s
+	- Was replaced by the 4070 & 4070 Super models
+* No RTX 4060s more than $350
+* No RTX 4060 Tis more than $450
+* No RTX 4070s more than $600
+* No RTX 4070 Supers more than $700
+* No RTX 4070 Tis more than $800
+	- Need to add 4070 Ti Super models
+* No RTX 4080s more than $1200
+	- Need to add 4080 Super models
+* No RTX 4090s more than $2000
+
+##########
+AMD GPUs
+##########
+* Last 2 AMD Generations only (Radeon RX 60000 & 70000 Series)
+	- 5600 XT and 5700 XT are exceptions
+* No 6500 XTs more than $175
+* No 6600s more than $220
+* No 6600 XTs more than $250
+* No 6650 XTs more than $270
+* No 6700 XTs more than $350
+* No 6750 XTs more than $380
+* No 6800s more than $420
+* No 6800 XTs more than $500
+* No 6900 XTs more than $550
+* No 6950 XTs more than $600
+* No 7600s more than $280
+* No 7700 XTs more than $450
+* No 7800 XTs more than $550
+* No 7900 XTs more than $800
+* No 7900 XTXs more than $1050
+
+######
+SSDs
+######
+* 1TB SSDs only
+* PCIe 3.0 & 4.0 only
+* No SSDs over $150
+* Limited brand list: 
+	- Corsair
+	- Crucial
+	- Inland
+	- Intel
+	- Kingston
+	- Sabrent
+	- Samsung
+	- Seagate
+	- TEAMGROUP
+	- Western Digital
+
+#####
+RAM
+#####
+* Only 16 or 32 GB kits
+* Only DDR4 or DDR5 modules
+	- DDR4 CAS Latency Modules: CL16 & CL18
+	- DDR5 CAS Latency Modules: CL30, CL36 & CL40
+* No RAM kits more than $150
+* Limited brand list: 
+	- Corsair
+	- G.Skill
+	- Kingston
+
+######
+PSUs
+######
+* Semi-modular or Full-modular PSUs only
+* 80+ Bronze or Gold Efficiency models only
+* Wattage range from 500 - 1200
+* Limited Brand List:
+	- be quiet!
+	- Cooler Master
+	- Corsair
+	- FSP Group
+	- Montech
+	- MSI
+	- SeaSonic
+	- Silverstone
+	- Super Flower
+	- Thermaltake
+	
+######
+Cases
+######
+* Limited Brand List:
+	- Asus
+	- BitFenix
+	- Cooler Master
+	- Corsair
+	- Deepcool
+	- Fractal Design
+	- Lian Li
+	- NZXT
+	- Phanteks
+	- Thermaltake
+
+
+######################
+Scoring System Rules
+######################
+
+### CPU ###
+ * Max Points: 25 (Weight Coeff = 0.25)
+ * Score Checks:
+	- Mobo Compatibility (10 Points)
+		* 0 points if not compatible
+		* Check CPU Socket with Motherboard Socket (AM4, AM5, LGA1700)
+		* Option: Don't check CPU perf if not compatible with Motherboard
+	- CPU 1080p Gaming Performance (15 Points)
+		* 15 points if perf_1080p >= 225 FPS
+		* 12 points if perf_1080p >= 200 AND perf_1080p < 225  
+		* 9 points if perf_1080p >= 180 AND perf_1080p < 200
+		* 6 points if perf_1080p >= 150 AND perf_1080p < 180
+		* 3 points if perf_1080p < 150
+
+### GPU ###
+* Max Points: 25 (Weight Coeff = 0.25)
+* Score Checks:
+	- Case Compatibility (10 Points)
+		* 10 points if GPU Length <= Case's Max GPU Length.
+		* 0 points otherwise
+	- GPU Gaming Performance (15 points)
+		* Use Average 1080p Performance (perf_1080p) 
+		* 3 points if less than 40 FSP
+		* 6 points if perf >= 40 AND perf < 60
+		* 9 points if perf >= 60 AND perf < 90
+		* 12 points if perf >= 90 AND perf < 120
+		* 15 points if perf >= 120
+
+### Mobo ###
+* Max Points: 20 (Weight Coeff = 0.20)
+* Score Checks:
+	- RAM Compatibility (5 Points)
+		* Check 'RAM_Type' value
+	- Chipset Level (5 Points)
+		* Entry: 5 Points
+		* Mid: 10 Points
+		* High: 15 Points
+
+### RAM ###
+* Max Points: 10 (Weight Coeff = 0.10)
+* Score Checks:
+	- GB Count (10 points)
+		- 16 GB: 5 Points
+		- 32 GB: 10 Points
+
+### PSU ###
+* Max Points: 10 Points (Weight Coeff = 0.10)
+* Score Checks: 
+	- Case Compatibility (5 Points)
+	- CPU + GPU Wattage Support (5 Points)
+		* If (CPU TDP + GPU TDP) <= PSU Wattage 
+			OR PSU Wattage >= GPU's 'rec_PSU' -----> 5 Points
+		
+### Case ###
+* Max Points: 10 (Weight Coefff = 0.10)
+* Score Checks:
+	- Mobo Compatibility (10 Points)
+		* ATX Motherboard Compatibility: ATX Cases
+		* Micro ATX Motherboard Compatibility: ATX, Micro ATX Cases
+		* Mini ITX Motherboard Compatibility: Mini ITX Cases
+
+* The power supply must fit in the PC case 
+	- For simplification, ATX and SFX PSUs will be compatible 
+		with ATX or Micro ATX cases, but only SFX PSUs will be
+		compatible with all cases
+* The CPU and GPU will have the highest score value weight coefficient
+	of 25% each
+* The Motherboard will have a 20% weight coefficient
+* The RAM and PSU will each have a 15% weight coefficient
+* The Case will have a 10% weight coefficient
+
+### Budget Reduction Rules ###
+* Set score to 0 if 2x over budget
+* Reduce score by 80% if 1.8x over budget
+* Reduce score by 60% if 1.6x over budget
+* Reduce score by 40% if 1.4x over budget
+* Reduce score by 20% if 1.2x over budget

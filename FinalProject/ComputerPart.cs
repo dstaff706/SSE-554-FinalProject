@@ -13,15 +13,14 @@ namespace FinalProject
 {
     public abstract class ComputerPart
     {
-        private string brand;
+        /*
+         * TODO: Modify to have Brand field exclusive to Processor class
+         *       Model will be the referred "Name" in the other sheets
+         */
+        
         private string model;
         private double price;
 
-        public string Brand
-        {
-            get { return brand; }
-            set { brand = value; }
-        }
         public string Model
         {
             get { return model; }
@@ -38,7 +37,7 @@ namespace FinalProject
 
         public string GetPartInfo()
         {
-            string partInfo = $"{Brand} {Model}\n" +
+            string partInfo = $"{Model}\n" +
                 $"Price: {Price.ToString("C", CultureInfo.GetCultureInfo("en-US"))}\n";
             return partInfo;
         }

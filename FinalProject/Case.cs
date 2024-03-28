@@ -57,7 +57,6 @@ namespace FinalProject
 
         public Case()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             FormFactor = string.Empty;
@@ -66,9 +65,8 @@ namespace FinalProject
             MaxGPU_Length = 0;
         }
 
-        public Case(string brand, string model, double price, string formFactor, string caseColor, string sidePanel, int maxGPU_Length)
+        public Case(string model, double price, string formFactor, string caseColor, string sidePanel, int maxGPU_Length)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             FormFactor = formFactor;
