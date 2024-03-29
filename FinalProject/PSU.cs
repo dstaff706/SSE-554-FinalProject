@@ -56,7 +56,6 @@ namespace FinalProject
 
         public PSU()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             FormFactor = string.Empty;
@@ -65,9 +64,8 @@ namespace FinalProject
             ModularType = string.Empty;
         }
 
-        public PSU(string brand, string model, double price, string formFactor, string efficiency, int wattage, string modularType)
+        public PSU(string model, double price, string formFactor, string efficiency, int wattage, string modularType)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             FormFactor = formFactor;

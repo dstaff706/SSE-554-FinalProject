@@ -76,7 +76,6 @@ namespace FinalProject
 
         public RAM()
         {
-            Brand = string.Empty;
             Model = string.Empty;
             Price = 0;
             Speed = 0;
@@ -88,9 +87,8 @@ namespace FinalProject
             RAM_Type = string.Empty;
         }
 
-        public RAM(string brand, string model, double price, int speed, int totalGB, double pricePerGB, string color, int casLatency, string ramType)
+        public RAM(string model, double price, int speed, int totalGB, double pricePerGB, string color, int casLatency, string ramType)
         {
-            Brand = brand;
             Model = model;
             Price = price;
             Speed = speed;
