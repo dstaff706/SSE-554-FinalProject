@@ -28,6 +28,7 @@
     <None Remove="Images\Geforce RTX 4080.jpg" />
     <None Remove="Images\Geforce RTX 4090.jpg" />
     <None Remove="Images\Intel.jpg" />
+    <None Remove="Images\logo.png" />
     <None Remove="Images\Radeon RX 6500 XT.jpg" />
     <None Remove="Images\Radeon RX 6600.jpg" />
     <None Remove="Images\Radeon RX 6700 XT.jpg" />
@@ -40,6 +41,7 @@
     <None Remove="Images\Radeon RX 7900 XT.jpg" />
     <None Remove="Images\Radeon RX 7900 XTX.jpg" />
     <None Remove="Images\Ryzen.jpg" />
+    <None Remove="Resources\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,6 +85,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Geforce RTX 4090.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Radeon RX 6500 XT.jpg">
@@ -133,12 +138,16 @@
     <Content Include="Images\Intel.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.0.10" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.54" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="OptimizedPriorityQueue" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>
