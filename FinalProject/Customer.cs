@@ -23,6 +23,8 @@
         private double totalAmountSpent;
         // Store the unique customer number 
         public int CustomerNumber { get; set; }
+        // Store the customer's password
+        public string Password { get; set; }
         // Store the customer name
         public string CustomerName { get; set; }
         // Store the state where the custoemr lives 
@@ -56,16 +58,18 @@
         public Customer()
         {
             TotalAmountSpent = 0.00;
+            Password = "1234";
             CustomerNumber = -1;
-            CustomerName = "Anonymous";
+            CustomerName = "Guest";
             CustomerLocation = "UNKNOWN";
         }
 
         // Customer Constructor
-        public Customer(double spent, int number, string name, string location)
+        public Customer(double spent, int number, string password, string name, string location)
         {
             TotalAmountSpent = spent;
             CustomerNumber = number;
+            Password = password;
             CustomerName = name;
             CustomerLocation = location;
         }

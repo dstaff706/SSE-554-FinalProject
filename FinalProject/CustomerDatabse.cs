@@ -1,4 +1,5 @@
 ﻿using Priority_Queue;
+using System.DirectoryServices;
 
 namespace FinalProject
 {
@@ -26,25 +27,27 @@ namespace FinalProject
             customerQueue = new SimplePriorityQueue<Customer>();
 
             // Create the known customer objects and store them in the priority queue
-            Customer newCustomer = new Customer() { TotalAmountSpent = 1221.05, CustomerNumber = nextCustomerNumber.CustomerNumber, CustomerName = "Anna Smith", CustomerLocation = "Georgia" };
+            // TODO - get Password from password fieldin GUI
+            Customer newCustomer = new Customer() { TotalAmountSpent = 1221.05, CustomerNumber = nextCustomerNumber.CustomerNumber, Password = "1234", CustomerName = "Anna Smith", CustomerLocation = "Georgia" };
             customerQueue.Enqueue(newCustomer, (int)newCustomer.LoyaltyLevel);
-            newCustomer = new Customer() { TotalAmountSpent = 7248.35, CustomerNumber = nextCustomerNumber.CustomerNumber, CustomerName = "Barney Johnson", CustomerLocation = "Tennesse" };
+            newCustomer = new Customer() { TotalAmountSpent = 7248.35, CustomerNumber = nextCustomerNumber.CustomerNumber, Password = "1234", CustomerName = "Barney Johnson", CustomerLocation = "Tennesse" };
             customerQueue.Enqueue(newCustomer, (int)newCustomer.LoyaltyLevel);
-            newCustomer = new Customer() { TotalAmountSpent = 843.25, CustomerNumber = nextCustomerNumber.CustomerNumber, CustomerName = "Charlie West", CustomerLocation = "New York" };
+            newCustomer = new Customer() { TotalAmountSpent = 843.25, CustomerNumber = nextCustomerNumber.CustomerNumber, Password = "1234", CustomerName = "Charlie West", CustomerLocation = "New York" };
             customerQueue.Enqueue(newCustomer, (int)newCustomer.LoyaltyLevel);
-            newCustomer = new Customer() { TotalAmountSpent = 8974.92, CustomerNumber = nextCustomerNumber.CustomerNumber, CustomerName = "Dana Winslow", CustomerLocation = "Texas" };
+            newCustomer = new Customer() { TotalAmountSpent = 8974.92, CustomerNumber = nextCustomerNumber.CustomerNumber, Password = "1234", CustomerName = "Dana Winslow", CustomerLocation = "Texas" };
             customerQueue.Enqueue(newCustomer, (int)newCustomer.LoyaltyLevel);
-            newCustomer = new Customer() { TotalAmountSpent = 4948.01, CustomerNumber = nextCustomerNumber.CustomerNumber, CustomerName = "Ethan White", CustomerLocation = "Alabama" };
+            newCustomer = new Customer() { TotalAmountSpent = 4948.01, CustomerNumber = nextCustomerNumber.CustomerNumber, Password = "1234", CustomerName = "Ethan White", CustomerLocation = "Alabama" };
             customerQueue.Enqueue(newCustomer, (int)newCustomer.LoyaltyLevel);
         } 
         
         // Method to add more customers to the priority queue  
-        public void AddCustomer(double spent, string name, string location)
+        public void AddCustomer(double spent, string password, string name, string location)
         {
             Customer newCustomer = new Customer
             {
                 TotalAmountSpent = spent,
                 CustomerNumber = nextCustomerNumber.CustomerNumber,
+                Password = password,
                 CustomerName = name,
                 CustomerLocation = location
         };
